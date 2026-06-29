@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Risto Control Professional | Gestionale Ristorante e Pizzeria</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #FF9800;
+            --secondary: #1a1a1a;
+            --bg-light: #f4f4f4;
+            --white: #ffffff;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Poppins', sans-serif; color: #333; background-color: var(--bg-light); line-height: 1.6; }
+        
+        nav { background: var(--secondary); padding: 15px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 3px solid var(--primary); position: sticky; top: 0; z-index: 1000; }
+        .logo { font-size: 1.4rem; font-weight: 700; color: var(--primary); text-transform: uppercase; }
+
+        .hero { 
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1350&q=80'); 
+            background-size: cover; background-position: center; color: white; padding: 100px 5%; text-align: center; 
+        }
+        .hero h1 { font-size: 3rem; color: var(--primary); margin-bottom: 15px; }
+
+        .container { padding: 60px 5%; max-width: 1200px; margin: 0 auto; }
+        .section-title { text-align: center; margin-bottom: 40px; font-size: 2.2rem; text-transform: uppercase; }
+
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        .price-card { 
+            background: white; padding: 25px; border-radius: 15px; text-align: center; 
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: 0.3s; border-bottom: 4px solid #ddd;
+        }
+        .price-card:hover { transform: translateY(-5px); border-bottom-color: var(--primary); }
+        
+        /* FIX IMMAGINI BIANCO E NERO */
+        .price-card img { 
+            width: 100%; height: 200px; object-fit: cover; border-radius: 10px; margin-bottom: 20px;
+            filter: grayscale(100%); 
+            transition: 0.4s;
+            display: block; /* Assicura che l'immagine sia visibile */
+        }
+        .price-card:hover img { filter: grayscale(0%); }
+
+        .amount { font-size: 2.5rem; font-weight: 700; color: var(--primary); display: block; }
+        .btn { 
+            display: inline-block; padding: 12px 30px; background: var(--primary); color: white; 
+            text-decoration: none; border-radius: 50px; font-weight: 600; text-transform: uppercase; margin-top: 20px;
+        }
+
+        .all-in-offer { 
+            background: var(--secondary); color: white; border-radius: 25px; padding: 50px; 
+            margin-top: 60px; text-align: center; border: 2px solid var(--primary); 
+        }
+        .all-in-offer img { 
+            width: 100%; max-width: 600px; height: 250px; object-fit: cover; 
+            border-radius: 15px; margin-bottom: 25px; filter: grayscale(100%);
+        }
+
+        footer { background: #111; color: white; padding: 50px 5%; text-align: center; }
+        .footer-mail { color: var(--primary); text-decoration: none; font-size: 1.3rem; font-weight: 600; }
+        
+        @media (max-width: 768px) { .hero h1 { font-size: 2rem; } }
+    </style>
+</head>
+<body>
+
+<nav><div class="logo">Risto Control Pro</div><a href="mailto:ristocontrolprofessional@gmail.com" class="btn" style="padding: 8px 15px; font-size: 0.7rem;">Contattaci</a></nav>
+
+<section class="hero">
+    <h1>Risto Control Professional</h1>
+    <p>Il futuro digitale del tuo Ristorante o Pizzeria è qui.</p>
+</section>
+
+<div class="container">
+    <h2 class="section-title">Piani in Abbonamento</h2>
+    <div class="pricing-grid">
+        <!-- PIANO ENTRY -->
+        <div class="price-card">
+            <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=600&q=80" alt="Sala">
+            <h3>PIANO ENTRY</h3>
+            <span class="amount">€ 59/mese</span>
+            <p>1 Sala | 15 Tavoli</p>
+            <a href="https://buy.stripe.com/7sYeVfezF5SQ6EL1mY2Ry00" class="btn">Attiva</a>
+        </div>
+        <!-- PIANO SMART -->
+        <div class="price-card" style="border-color: var(--primary);">
+            <img src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600&q=80" alt="Pizzeria">
+            <h3>PIANO SMART</h3>
+            <span class="amount">€ 89/mese</span>
+            <p>1 Sala | 49 Tavoli | Monitor</p>
+            <a href="https://buy.stripe.com/aFa14p639che7IPc1C2Ry01" class="btn">Attiva</a>
+        </div>
+        <!-- PIANO PRO -->
+        <div class="price-card">
+            <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?w=600&q=80" alt="Pro">
+            <h3>PIANO PRO</h3>
+            <span class="amount">€ 129/mese</span>
+            <p>3 Sale | 150 Tavoli | Assistenza Premium</p>
+            <a href="https://buy.stripe.com/eVq4gB2QX6WUbZ52r22Ry02" class="btn">Attiva</a>
+        </div>
+    </div>
+
+    <!-- OFFERTA CHIAVI IN MANO AGGIORNATA -->
+<div class="all-in-offer">
+    <img src="https://images.unsplash.com/photo-1577106263724-2c8e03bfe9cf?auto=format&fit=crop&w=1200&q=80" alt="Brigata di Cucina">
+    <h2>SOLUZIONE CHIAVI IN MANO</h2>
+    <p style="font-size: 1.2rem; color: #bbb; margin-bottom: 20px;">Dimentica la tecnologia, pensa solo alla tua cucina.</p>
+    <div style="font-size: 3.5rem; font-weight: 700; color: var(--primary);">€ 2.500 <small style="font-size: 1rem; color: white;">UNA TANTUM</small></div>
+    
+    <div style="max-width: 800px; margin: 30px auto; text-align: left; background: rgba(255,255,255,0.05); padding: 30px; border-radius: 15px;">
+        <p style="margin-bottom: 15px;">🚀 <b>VELOCITÀ ESTREMA:</b> In sole 24 ore installeremo tutto quello che include il pacchetto..</p>
+        <p style="margin-bottom: 15px;">📦 <b>TUTTO INCLUSO:</b> Tablet per cassa e cucina, palmari per camerieri e 4 stampanti termiche professionali.</p>
+        <p style="margin-bottom: 15px;">🎓 <b>FORMAZIONE VIP:</b> Formiamo personalmente il tuo staff per rendere il passaggio al digitale immediato e senza stress.</p>
+        <p style="margin-bottom: 15px;">🔧 <b>CONFIGURAZIONE AD-HOC:</b> Disegniamo le tue sale e carichiamo il tuo menù. Parti subito, zero tempi morti.</p>
+    </div>
+
+    <p style="margin-bottom: 30px; font-style: italic; color: var(--primary);">"La tecnologia invisibile che fa girare il tuo ristorante come un orologio svizzero."</p>
+    
+    <a href="mailto:ristocontrolprofessional@gmail.com?subject=Richiesta Info Soluzione Chiavi in Mano" class="btn" style="background: white; color: black; padding: 20px 40px; font-size: 1.1rem;">RICHIEDI SOPRALLUOGO GRATUITO</a>
+    
+    <p style="font-size: 0.8rem; color: #777; margin-top: 20px;">* Offerta lancio soggetta a disponibilità. Il pacchetto richiede l'attivazione di un piano di assistenza mensile.</p>
+</div>
+</div>
+
+<footer>
+    <a href="mailto:ristocontrolprofessional@gmail.com" class="footer-mail">ristocontrolprofessional@gmail.com</a>
+    <p style="margin-top: 20px;"><b>www.ristocontrolprofessional.it</b></p>
+    <p style="font-size: 0.8rem; color: #555; margin-top: 30px;">&copy; 2024 Risto Control Professional - Gennaro Bevo</p>
+</footer>
+
+</body>
+</html>
