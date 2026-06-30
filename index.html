@@ -4,26 +4,46 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Risto Control Professional | Digitalizzazione Ristorazione</title>
+    
+    <!-- Google Fonts e Swiper CSS -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
     <style>
-        :root { --primary: #FF9800; --dark: #121212; --light: #f4f4f4; }
+        :root { 
+            --primary: #FF9800; 
+            --dark: #121212; 
+            --light: #f4f4f4; 
+        }
+        
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Poppins', sans-serif; background: var(--light); color: #333; overflow-x: hidden; }
         
         /* NAVBAR */
-        nav { background: var(--dark); padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 3px solid var(--primary); position: sticky; top: 0; z-index: 9999; }
-        .logo { font-size: 1.3rem; font-weight: 900; color: var(--primary); text-transform: uppercase; letter-spacing: 1px; }
+        nav { 
+            background: var(--dark); padding: 10px 5%; display: flex; 
+            justify-content: space-between; align-items: center; 
+            border-bottom: 3px solid var(--primary); position: sticky; top: 0; z-index: 9999; 
+        }
+        .logo-container { display: flex; align-items: center; gap: 12px; }
+        .logo-img-nav { height: 45px; width: auto; border-radius: 8px; }
+        .logo-text { font-size: 1.2rem; font-weight: 900; color: var(--primary); text-transform: uppercase; letter-spacing: 1px; }
 
-        /* HERO */
-        .hero { background: var(--dark); color: white; padding: 100px 5% 150px; text-align: center; clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%); margin-bottom: -80px; }
+        /* HERO SECTION */
+        .hero { background: var(--dark); color: white; padding: 80px 5% 150px; text-align: center; clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%); margin-bottom: -80px; }
+        .hero-logo { height: 120px; width: auto; margin-bottom: 25px; border-radius: 20px; box-shadow: 0 10px 40px rgba(255,152,0,0.3); background: white; padding: 5px; }
         .hero h1 { font-size: 3.5rem; font-weight: 900; color: var(--primary); line-height: 1.1; margin-bottom: 20px; }
         .hero p { font-size: 1.2rem; opacity: 0.8; max-width: 600px; margin: 0 auto; }
 
-        /* SLIDER SHOWCASE */
-        .showcase { padding: 100px 0 50px; background: var(--light); }
+        /* SHOWCASE SLIDER */
+        .showcase { padding: 100px 0 50px; background: var(--light); position: relative; }
         .swiper { width: 100%; padding-top: 50px; }
-        .swiper-slide { width: 280px; height: 580px; background: #000; border-radius: 45px; border: 12px solid #222; box-shadow: 0 30px 60px rgba(0,0,0,0.3); transition: 0.5s; overflow: hidden; filter: grayscale(100%); }
+        .swiper-slide { 
+            width: 280px; height: 580px; background: #000; 
+            border-radius: 45px; border: 12px solid #222; 
+            box-shadow: 0 30px 60px rgba(0,0,0,0.3); 
+            transition: 0.5s; overflow: hidden; filter: grayscale(100%); 
+        }
         .swiper-slide img { width: 100%; height: 100%; object-fit: cover; }
         .swiper-slide-active { filter: grayscale(0%); border-color: var(--primary); transform: scale(1.08); z-index: 10; }
 
@@ -40,18 +60,14 @@
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
         .card { background: white; padding: 40px 30px; border-radius: 30px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.3s; border-bottom: 5px solid #eee; display: flex; flex-direction: column; }
         .card:hover { transform: translateY(-10px); border-color: var(--primary); }
-        
-        /* IMMAGINI ATMOSFERA PIANI */
         .card img { width: 100%; height: 200px; object-fit: cover; border-radius: 15px; margin-bottom: 20px; filter: grayscale(100%); transition: 0.5s; display: block; }
         .card:hover img { filter: grayscale(0%); }
-
         .card h3 { font-size: 1.6rem; font-weight: 800; margin-bottom: 10px; }
         .price { font-size: 3.5rem; font-weight: 900; color: var(--primary); margin: 15px 0; }
         .features { list-style: none; margin: 25px 0; text-align: left; flex-grow: 1; }
         .features li { margin-bottom: 12px; padding-left: 30px; position: relative; font-size: 0.95rem; }
         .features li::before { content: "✓"; position: absolute; left: 0; color: #4CAF50; font-weight: bold; }
 
-        /* BOTTONI */
         .btn { display: inline-block; padding: 18px 40px; background: var(--primary); color: white; text-decoration: none; border-radius: 50px; font-weight: 700; text-transform: uppercase; transition: 0.3s; border: none; cursor: pointer; text-align: center; width: 100%; font-size: 1rem; }
         .btn:hover { background: #e68900; transform: scale(1.02); }
 
@@ -61,8 +77,8 @@
         .all-in img { width: 100%; max-width: 900px; height: 400px; object-fit: cover; border-radius: 20px; margin-bottom: 30px; filter: grayscale(100%); transition: 0.5s; display: block; margin: 0 auto; }
         .all-in:hover img { filter: grayscale(0%); }
         .all-in-details { max-width: 800px; margin: 40px auto; text-align: left; background: rgba(255,255,255,0.05); padding: 40px; border-radius: 25px; border-left: 5px solid var(--primary); }
+        .all-in-details p { margin-bottom: 15px; font-size: 1.1rem; color: #eee; }
 
-        /* FOOTER */
         footer { background: #000; color: white; padding: 80px 5% 40px; text-align: center; }
         .footer-mail { color: var(--primary); text-decoration: none; font-size: 1.5rem; font-weight: 900; display: block; margin-bottom: 20px; }
         
@@ -71,9 +87,16 @@
 </head>
 <body>
 
-<nav><div class="logo">Risto Control Pro</div><a href="mailto:ristocontrolprofessional@gmail.com" class="btn" style="width:auto; padding: 10px 20px; font-size: 0.7rem;">Contattaci</a></nav>
+<nav>
+    <div class="logo-container">
+        <img src="https://www.image2url.com/r2/default/images/1782398593140-ecc078d6-b48b-462f-9cd7-2d8e5604a727.png" alt="Logo" class="logo-img-nav">
+        <span class="logo-text">Risto Control Pro</span>
+    </div>
+    <a href="mailto:ristocontrolprofessional@gmail.com" class="btn" style="width:auto; padding: 10px 20px; font-size: 0.7rem;">Contattaci</a>
+</nav>
 
 <section class="hero">
+    <img src="https://www.image2url.com/r2/default/images/1782398593140-ecc078d6-b48b-462f-9cd7-2d8e5604a727.png" alt="Risto Control Logo" class="hero-logo">
     <h1>Risto Control Professional</h1>
     <p>La soluzione completa per la gestione intelligente del tuo ristorante o pizzeria.</p>
 </section>
@@ -112,6 +135,7 @@
             <div class="swiper-slide"><img src="https://plain-weur-prod-public.komododecks.com/202606/30/DvDcToz7lSPHxhwtfJJN/image.png"></div>
         </div>
     </div>
+    <!-- CONTROLLI SOTTO LO SLIDER -->
     <div class="slider-controls">
         <div class="nav-btn custom-prev">❮</div>
         <div class="custom-pagination"></div>
@@ -140,7 +164,7 @@
         </div>
         <!-- PIANO PRO -->
         <div class="card">
-            <img src="https://images.pexels.com/photos/941861/pexels-photo-941861.jpeg?auto=compress&w=600" alt="Gestione">
+            <img src="https://images.pexels.com/photos/1414235/pexels-photo-1414235.jpeg?auto=compress&w=600" alt="Gestione">
             <h3>PIANO PRO</h3>
             <div class="price">€ 129<small style="font-size:1rem; color:#999;">/mese</small></div>
             <ul class="features"><li>3 Sale / 155 Tavoli</li><li>Assistenza VIP Prioritaria</li><li>Gestione Magazzino & Spesa</li><li>Tutte le funzioni attive</li></ul>
@@ -170,6 +194,7 @@
     <p style="font-size:0.7rem; color:#444; margin-top:40px;">&copy; 2024 Risto Control Professional di Gennaro Bevo. P.IVA Forfettaria.</p>
 </footer>
 
+<!-- Swiper JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
     var swiper = new Swiper(".mySwiper", {
