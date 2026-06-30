@@ -3,152 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Risto Control Professional | Digitalizza il tuo Locale</title>
-    
-    <!-- Font e Icone -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+    <title>Risto Control Professional | Gestionale Ristorazione</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap" rel="stylesheet">
     <!-- Slider Library -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-
     <style>
-        :root {
-            --primary: #FF9800; /* Arancio Risto Control */
-            --secondary: #1a1a1a; /* Nero */
-            --bg-light: #f4f4f4;
-            --white: #ffffff;
-        }
-
+        :root { --primary: #FF9800; --dark: #121212; --light: #f4f4f4; }
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: 'Poppins', sans-serif; color: #333; background-color: var(--bg-light); line-height: 1.6; }
+        body { font-family: 'Poppins', sans-serif; background: var(--light); color: #333; overflow-x: hidden; }
         
-        /* Navigation */
-        nav { 
-            background: var(--secondary); padding: 15px 5%; display: flex; 
-            justify-content: space-between; align-items: center; 
-            border-bottom: 3px solid var(--primary); position: sticky; top: 0; z-index: 1000; 
-        }
-        .logo { font-size: 1.4rem; font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: 1px; }
+        /* HEADER */
+        nav { background: var(--dark); padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 3px solid var(--primary); position: sticky; top: 0; z-index: 9999; }
+        .logo { font-size: 1.3rem; font-weight: 900; color: var(--primary); text-transform: uppercase; letter-spacing: 1px; }
 
-        /* Hero Section */
-        .hero { 
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1350&q=80'); 
-            background-size: cover; background-position: center; color: white; padding: 120px 5%; text-align: center; 
-        }
-        .hero h1 { font-size: 3.5rem; color: var(--primary); margin-bottom: 15px; font-weight: 800; }
-        .hero p { font-size: 1.2rem; max-width: 700px; margin: 0 auto; opacity: 0.9; }
+        /* HERO */
+        .hero { background: var(--dark); color: white; padding: 100px 5% 150px; text-align: center; clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%); margin-bottom: -80px; }
+        .hero h1 { font-size: 3.5rem; font-weight: 900; color: var(--primary); line-height: 1.1; margin-bottom: 20px; }
+        .hero p { font-size: 1.2rem; opacity: 0.8; max-width: 600px; margin: 0 auto; }
 
-        /* Showcase / Slider Section */
-        .showcase-section { background: #fff; padding: 100px 0; border-top: 1px solid #ddd; }
-        .section-title { text-align: center; margin-bottom: 50px; font-size: 2.5rem; text-transform: uppercase; font-weight: 800; }
-        
-        .swiper { width: 100%; padding-top: 50px; padding-bottom: 50px; }
+        /* SHOWCASE SLIDER - IL FINTO TELEFONO */
+        .showcase { padding: 100px 0 50px; background: var(--light); }
+        .swiper { width: 100%; padding: 50px 0; }
         .swiper-slide { 
-            background-position: center; background-size: cover; width: 280px; height: 580px; 
-            border-radius: 35px; border: 10px solid #222; box-shadow: 0 25px 50px rgba(0,0,0,0.3);
-            filter: grayscale(100%); transition: 0.5s; background-color: #000; overflow: hidden;
+            width: 280px; height: 580px; background: #000; 
+            border-radius: 45px; border: 12px solid #222; 
+            box-shadow: 0 30px 60px rgba(0,0,0,0.3); 
+            transition: 0.5s; overflow: hidden; position: relative;
+            filter: grayscale(100%);
         }
-        .swiper-slide-active { filter: grayscale(0%); border-color: var(--primary); transform: scale(1.05); z-index: 10; }
+        .swiper-slide-active { filter: grayscale(0%); border-color: var(--primary); transform: scale(1.08); z-index: 10; }
         .swiper-slide img { width: 100%; height: 100%; object-fit: cover; }
-        .slide-caption { margin-top: 25px; font-weight: 800; color: #000; text-transform: uppercase; font-size: 0.85rem; letter-spacing: 1px; }
+        .slide-label { position: absolute; bottom: 30px; left: 0; width: 100%; text-align: center; color: white; font-weight: 900; text-transform: uppercase; font-size: 0.7rem; background: rgba(0,0,0,0.6); padding: 10px 0; backdrop-filter: blur(5px); transform: translateY(100%); transition: 0.3s; }
+        .swiper-slide-active .slide-label { transform: translateY(0); }
 
-        /* Pricing Grid */
-        .container { padding: 80px 5%; max-width: 1200px; margin: 0 auto; }
-        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-top: 40px; }
+        /* PREZZI */
+        .container { padding: 60px 5%; max-width: 1200px; margin: 0 auto; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        .card { background: white; padding: 40px 30px; border-radius: 30px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.3s; border: 1px solid #eee; }
+        .card:hover { transform: translateY(-10px); border-color: var(--primary); }
+        .card h3 { font-size: 1.6rem; font-weight: 800; margin-bottom: 10px; }
+        .price { font-size: 3.5rem; font-weight: 900; color: var(--primary); margin: 15px 0; }
+        .features { list-style: none; margin: 25px 0; text-align: left; }
+        .features li { margin-bottom: 12px; padding-left: 30px; position: relative; font-size: 0.95rem; }
+        .features li::before { content: "✓"; position: absolute; left: 0; color: #4CAF50; font-weight: bold; }
+
+        /* BOTTONI */
+        .btn { display: inline-block; padding: 18px 40px; background: var(--primary); color: white; text-decoration: none; border-radius: 50px; font-weight: 700; text-transform: uppercase; transition: 0.3s; border: none; cursor: pointer; text-align: center; width: 100%; font-size: 1rem; }
+        .btn:hover { background: #e68900; transform: scale(1.02); }
+
+        /* OFFERTA CHIAVI IN MANO */
+        .all-in { background: var(--dark); color: white; border-radius: 40px; padding: 80px 40px; margin-top: 100px; text-align: center; border: 2px solid var(--primary); position: relative; overflow: hidden; }
+        .all-in h2 { color: var(--primary); font-size: 2.8rem; font-weight: 900; margin-bottom: 10px; }
+        .all-in-details { max-width: 800px; margin: 40px auto; text-align: left; background: rgba(255,255,255,0.05); padding: 40px; border-radius: 25px; border-left: 5px solid var(--primary); }
+        .all-in-details p { margin-bottom: 15px; font-size: 1.1rem; }
+
+        footer { background: #000; color: white; padding: 80px 5% 40px; text-align: center; }
+        .footer-mail { color: var(--primary); text-decoration: none; font-size: 1.5rem; font-weight: 900; display: block; margin-bottom: 20px; }
         
-        .price-card { 
-            background: white; padding: 30px; border-radius: 20px; text-align: center; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.3s; border-bottom: 5px solid #eee;
-            display: flex; flex-direction: column;
-        }
-        .price-card:hover { transform: translateY(-10px); border-bottom-color: var(--primary); }
-        
-        .price-card img { 
-            width: 100%; height: 220px; object-fit: cover; border-radius: 12px; margin-bottom: 25px;
-            filter: grayscale(100%); transition: 0.4s;
-        }
-        .price-card:hover img { filter: grayscale(0%); }
-
-        .amount { font-size: 3rem; font-weight: 800; color: var(--primary); display: block; margin: 10px 0; }
-        .plan-features { list-style: none; margin: 20px 0; flex-grow: 1; text-align: left; padding-left: 20px; }
-        .plan-features li { margin-bottom: 10px; position: relative; padding-left: 25px; font-size: 0.95rem; }
-        .plan-features li::before { content: "✓"; position: absolute; left: 0; color: #4CAF50; font-weight: bold; }
-
-        .btn { 
-            display: inline-block; padding: 15px 35px; background: var(--primary); color: white; 
-            text-decoration: none; border-radius: 50px; font-weight: 700; text-transform: uppercase; 
-            transition: 0.3s; border: none; cursor: pointer;
-        }
-        .btn:hover { background: #e68900; box-shadow: 0 5px 15px rgba(255,152,0,0.4); }
-
-        /* All-In Offer */
-        .all-in-offer { 
-            background: var(--secondary); color: white; border-radius: 30px; padding: 60px; 
-            margin-top: 80px; text-align: center; border: 2px solid var(--primary); 
-        }
-        .all-in-offer img { 
-            width: 100%; max-width: 900px; height: 350px; object-fit: cover; 
-            border-radius: 20px; margin-bottom: 30px; filter: grayscale(100%); transition: 0.5s;
-        }
-        .all-in-offer:hover img { filter: grayscale(0%); }
-        .all-in-offer h2 { color: var(--primary); font-size: 2.8rem; font-weight: 800; margin-bottom: 10px; }
-        
-        .offer-details { 
-            max-width: 800px; margin: 40px auto; text-align: left; 
-            background: rgba(255,255,255,0.05); padding: 40px; border-radius: 20px; 
-        }
-        .offer-details p { margin-bottom: 20px; font-size: 1.1rem; }
-
-        /* Footer */
-        footer { background: #111; color: white; padding: 80px 5% 40px; text-align: center; }
-        .footer-mail { color: var(--primary); text-decoration: none; font-size: 1.6rem; font-weight: 700; display: block; margin-bottom: 20px; }
-        
-        @media (max-width: 768px) { 
-            .hero h1 { font-size: 2.2rem; } 
-            .all-in-offer { padding: 40px 20px; }
-            .all-in-offer h2 { font-size: 2rem; }
-        }
+        @media (max-width: 768px) { .hero h1 { font-size: 2.5rem; } .swiper-slide { width: 230px; height: 480px; } }
     </style>
 </head>
 <body>
 
 <nav>
     <div class="logo">Risto Control Pro</div>
-    <a href="mailto:ristocontrolprofessional@gmail.com" class="btn" style="padding: 10px 20px; font-size: 0.8rem;">Contattaci</a>
+    <a href="mailto:ristocontrolprofessional@gmail.com" class="btn" style="width:auto; padding: 10px 20px; font-size: 0.7rem;">Contattaci</a>
 </nav>
 
 <section class="hero">
     <h1>Risto Control Professional</h1>
-    <p>La soluzione definitiva per eliminare gli errori e velocizzare il servizio nel tuo locale.</p>
+    <p>Velocità, Precisione, Controllo. Tutto ciò che il tuo ristorante merita in un'unica piattaforma.</p>
 </section>
 
-<!-- SHOWCASE SLIDER -->
-<section class="showcase-section">
-    <h2 class="section-title">L'App in Azione</h2>
+<!-- SHOWCASE SLIDER CON I TUOI SCREENSHOT -->
+<section class="showcase">
+    <h2 style="text-align:center; font-weight:900; text-transform:uppercase; letter-spacing:2px; margin-bottom:20px;">L'App in Azione</h2>
     <div class="swiper mySwiper">
         <div class="swiper-wrapper">
+            <!-- 1. DASHBOARD -->
             <div class="swiper-slide">
-                <img src="screen_home.jpg" alt="Home">
-                <div class="text-center slide-caption">Dashboard Intuitiva</div>
+                <img src="https://plain-weur-prod-public.komododecks.com/202606/30/NDmpjh9wL2VPhF61v7z3/image.png" alt="Dashboard">
+                <div class="slide-label">Dashboard Intuitiva</div>
             </div>
+            <!-- 2. MAPPA TAVOLI -->
             <div class="swiper-slide">
-                <img src="screen_sala.jpg" alt="Sala">
-                <div class="text-center slide-caption">Mappa Tavoli in Tempo Reale</div>
+                <img src="https://plain-weur-prod-public.komododecks.com/202606/30/SlCG5UUFu3wurn8ihvdE/image.png" alt="Mappa Tavoli">
+                <div class="slide-label">Mappa Tavoli Dinamica</div>
             </div>
+            <!-- 3. PRESA ORDINE -->
             <div class="swiper-slide">
-                <img src="screen_cucina.jpg" alt="Cucina">
-                <div class="text-center slide-caption">Monitor Cucina Professionale</div>
+                <img src="https://plain-weur-prod-public.komododecks.com/202606/30/DvDcToz7lSPHxhwtfJJN/image.png" alt="Ordine">
+                <div class="slide-label">Presa Comande Rapida</div>
             </div>
+            <!-- 4. MONITOR CUCINA -->
             <div class="swiper-slide">
-                <img src="screen_pagamenti.jpg" alt="Conti">
-                <div class="text-center slide-caption">Gestione Pagamenti e Divisioni</div>
+                <img src="https://plain-weur-prod-public.komododecks.com/202606/30/v2pThZRVvvfHZsoAvsPd/image.png" alt="Cucina">
+                <div class="slide-label">Monitor Cucina Professionale</div>
             </div>
+            <!-- 5. PAGAMENTI -->
             <div class="swiper-slide">
-                <img src="screen_prenotazioni.jpg" alt="Prenotazioni">
-                <div class="text-center slide-caption">Sito Web Prenotazioni Unico</div>
+                <img src="https://plain-weur-prod-public.komododecks.com/202606/30/QYonmIePvYqUJn0FbRLP/image.png" alt="Pagamenti">
+                <div class="slide-label">Divisione Conti Intelligente</div>
             </div>
+            <!-- 6. PRENOTAZIONI WEB -->
             <div class="swiper-slide">
-                <img src="screen_statistiche.jpg" alt="Statistiche">
-                <div class="text-center slide-caption">Analisi Dettagliata Incassi</div>
+                <img src="https://plain-weur-prod-public.komododecks.com/202606/30/Obg0jnY6TOTFyKL21Gnb/image.png" alt="Prenotazioni">
+                <div class="slide-label">Web Prenotazioni & QR</div>
+            </div>
+            <!-- 7. STATISTICHE -->
+            <div class="swiper-slide">
+                <img src="https://plain-weur-prod-public.komododecks.com/202606/30/t2HD6lN21ICHoi91Wh9t/image.png" alt="Statistiche">
+                <div class="slide-label">Analisi degli Incassi</div>
             </div>
         </div>
         <div class="swiper-pagination"></div>
@@ -156,80 +121,71 @@
 </section>
 
 <div class="container">
-    <h2 class="section-title">I Nostri Piani</h2>
-    <div class="pricing-grid" id="piani">
+    <div class="grid" id="piani">
         <!-- PIANO ENTRY -->
-        <div class="price-card">
-            <img src="https://images.unsplash.com/photo-1550966841-3ee7adac169a?w=600&q=80" alt="Sala">
+        <div class="card">
             <h3>PIANO ENTRY</h3>
-            <span class="amount">€ 59<small style="font-size: 1rem; color: #888;">/mese</small></span>
-            <ul class="plan-features">
+            <div class="price">€ 59<small style="font-size:1rem; color:#999;">/mese</small></div>
+            <ul class="features">
                 <li>1 Sala dedicata</li>
                 <li>Fino a 15 Tavoli</li>
                 <li>Comande Illimitate</li>
                 <li>Assistenza Standard</li>
             </ul>
-            <a href="https://buy.stripe.com/7sYeVfezF5SQ6EL1mY2Ry00" class="btn">Attiva Entry</a>
+            <a href="https://buy.stripe.com/7sYeVfezF5SQ6EL1mY2Ry00" class="btn">Attiva Ora</a>
         </div>
-
         <!-- PIANO SMART -->
-        <div class="price-card" style="border-bottom-color: var(--primary);">
-            <img src="https://images.unsplash.com/photo-1593504049359-74330189a355?w=600&q=80" alt="Pizzeria">
-            <div style="background: var(--primary); color: white; font-size: 0.7rem; font-weight: 800; padding: 5px 15px; border-radius: 20px; align-self: center; margin-bottom: 10px;">CONSIGLIATO</div>
+        <div class="card" style="border: 3px solid var(--primary);">
+            <div style="background:var(--primary); color:white; font-size:0.6rem; font-weight:900; padding:4px 12px; border-radius:10px; display:inline-block; margin-bottom:10px;">IL PIÙ VENDUTO</div>
             <h3>PIANO SMART</h3>
-            <span class="amount">€ 89<small style="font-size: 1rem; color: #888;">/mese</small></span>
-            <ul class="plan-features">
+            <div class="price">€ 89<small style="font-size:1rem; color:#999;">/mese</small></div>
+            <ul class="features">
                 <li>1 Sala dedicata</li>
                 <li>Fino a 49 Tavoli</li>
-                <li>Monitor Cucina e Pizzeria</li>
-                <li>Statistiche di Vendita</li>
+                <li>Monitor Cucina & Pizzeria</li>
+                <li>Supporto Telefonico</li>
             </ul>
-            <a href="https://buy.stripe.com/aFa14p639che7IPc1C2Ry01" class="btn">Attiva Smart</a>
+            <a href="https://buy.stripe.com/aFa14p639che7IPc1C2Ry01" class="btn">Attiva Ora</a>
         </div>
-
         <!-- PIANO PRO -->
-        <div class="price-card">
-            <img src="https://images.unsplash.com/photo-1552566626-52f8b828add9?w=600&q=80" alt="Pro">
+        <div class="card">
             <h3>PIANO PRO</h3>
-            <span class="amount">€ 129<small style="font-size: 1rem; color: #888;">/mese</small></span>
-            <ul class="plan-features">
-                <li>Fino a 3 Sale</li>
-                <li>Fino a 155 Tavoli</li>
+            <div class="price">€ 129<small style="font-size:1rem; color:#999;">/mese</small></div>
+            <ul class="features">
+                <li>3 Sale / 155 Tavoli</li>
                 <li>Assistenza VIP Prioritaria</li>
-                <li>Gestione Magazzino & Dispensa</li>
+                <li>Gestione Magazzino & Spesa</li>
+                <li>Tutte le funzioni attive</li>
             </ul>
-            <a href="https://buy.stripe.com/eVq4gB2QX6WUbZ52r22Ry02" class="btn">Attiva Pro</a>
+            <a href="https://buy.stripe.com/eVq4gB2QX6WUbZ52r22Ry02" class="btn">Attiva Ora</a>
         </div>
     </div>
 
     <!-- OFFERTA CHIAVI IN MANO -->
-    <div class="all-in-offer">
-        <img src="https://images.unsplash.com/photo-1577106263724-2c8e03bfe9cf?auto=format&fit=crop&w=1200&q=80" alt="Brigata">
+    <div class="all-in">
         <h2>SOLUZIONE CHIAVI IN MANO</h2>
-        <p style="font-size: 1.2rem; opacity: 0.8;">Zero Stress. Installiamo tutto noi in 24 ore.</p>
-        <div class="amount" style="font-size: 4rem; color: white;">€ 2.500 <small style="font-size: 1rem; opacity: 0.6;">UNA TANTUM</small></div>
+        <p style="font-size: 1.2rem; opacity: 0.7;">Puntiamo alla perfezione del tuo locale.</p>
+        <div class="price" style="color:white; font-size: 4.5rem; margin: 30px 0;">€ 2.500</div>
         
-        <div class="offer-details">
-            <p>🚀 <b>INSTALLAZIONE LAMPO:</b> In sole 24 ore configuriamo la rete e i dispositivi nel tuo locale.</p>
-            <p>📦 <b>HARDWARE INCLUSO:</b> 2 Tablet (Cassa/Cucina), 2 Palmari Camerieri e 4 Stampanti Termiche.</p>
-            <p>🔧 <b>SET-UP PERSONALIZZATO:</b> Carichiamo il tuo menù e disegniamo le tue sale per te.</p>
-            <p>🎓 <b>FORMAZIONE STAFF:</b> Insegniamo a tutto il tuo team come usare l'app in meno di 30 minuti.</p>
+        <div class="all-in-details">
+            <p>🚀 <b>SETUP COMPLETO:</b> Configurazione software e rete in 24 ore.</p>
+            <p>📦 <b>HARDWARE PRO:</b> 2 Tablet, 2 Palmari, 4 Stampanti Termiche.</p>
+            <p>🎓 <b>FORMAZIONE:</b> Corso intensivo per tutto il tuo staff.</p>
+            <p>🔧 <b>CUSTOM:</b> Carichiamo noi il tuo menù e disegniamo le tue sale.</p>
         </div>
 
-        <p style="font-style: italic; color: var(--primary); margin-bottom: 40px;">"La tecnologia che lavora per te, non il contrario."</p>
-        <a href="mailto:ristocontrolprofessional@gmail.com?subject=Richiesta Soluzione Chiavi in Mano" class="btn" style="background: white; color: black; padding: 20px 50px;">PRENOTA UN SOPRALLUOGO</a>
-        <p style="font-size: 0.8rem; color: #666; margin-top: 30px;">* Soggetto a canone di licenza e assistenza mensile.</p>
+        <p style="font-style: italic; color: var(--primary); margin-bottom: 40px; font-size: 1.2rem;">"La tecnologia che sparisce e lascia spazio al tuo talento."</p>
+        <a href="mailto:ristocontrolprofessional@gmail.com?subject=Richiesta Soluzione Chiavi in Mano" class="btn" style="background:white; color:black; width: auto; padding: 25px 80px; font-size: 1.1rem;">RICHIEDI SOPRALLUOGO GRATUITO</a>
     </div>
 </div>
 
 <footer>
-    <h2 style="margin-bottom: 30px; font-weight: 800;">CONTATTACI ORA</h2>
     <a href="mailto:ristocontrolprofessional@gmail.com" class="footer-mail">ristocontrolprofessional@gmail.com</a>
-    <p><b>www.ristocontrolprofessional.it</b></p>
-    <div style="margin-top: 40px; opacity: 0.5;">
-        <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Stripe_Logo%2C_revised_2016.svg" alt="Stripe" style="height: 25px;">
+    <p style="margin-top:20px; font-weight:bold; letter-spacing: 2px;">WWW.RISTOCONTROLPROFESSIONAL.IT</p>
+    <div style="margin-top:40px; opacity:0.3;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Stripe_Logo%2C_revised_2016.svg" height="20">
     </div>
-    <p style="font-size: 0.8rem; color: #555; margin-top: 30px;">&copy; 2024 Risto Control Professional di Gennaro Bevo. P.IVA Forfettaria.</p>
+    <p style="font-size:0.7rem; color:#444; margin-top:40px;">&copy; 2024 Risto Control Professional di Gennaro Bevo. P.IVA Forfettaria.</p>
 </footer>
 
 <!-- Scripts -->
@@ -240,10 +196,10 @@
         grabCursor: true,
         centeredSlides: true,
         slidesPerView: "auto",
-        coverflowEffect: { rotate: 15, stretch: 0, depth: 300, modifier: 1, slideShadows: true },
-        pagination: { el: ".swiper-pagination" },
+        coverflowEffect: { rotate: 10, stretch: 0, depth: 250, modifier: 1, slideShadows: true },
+        pagination: { el: ".swiper-pagination", clickable: true },
         loop: true,
-        autoplay: { delay: 3000, disableOnInteraction: false }
+        autoplay: { delay: 3500, disableOnInteraction: false }
     });
 </script>
 </body>
