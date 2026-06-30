@@ -4,47 +4,136 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Risto Control Professional | Digitalizzazione Ristorazione</title>
+    
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap" rel="stylesheet">
+    <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
     <style>
-        :root { --primary: #FF9800; --dark: #121212; --light: #f4f4f4; }
+        :root { 
+            --primary: #FF9800; 
+            --dark: #121212; 
+            --light: #f4f4f4; 
+        }
+        
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { font-family: 'Poppins', sans-serif; background: var(--light); color: #333; overflow-x: hidden; }
-        nav { background: var(--dark); padding: 20px 5%; display: flex; justify-content: space-between; align-items: center; border-bottom: 3px solid var(--primary); position: sticky; top: 0; z-index: 9999; }
+        
+        /* NAVBAR */
+        nav { 
+            background: var(--dark); padding: 15px 5%; display: flex; 
+            justify-content: space-between; align-items: center; 
+            border-bottom: 3px solid var(--primary); position: sticky; top: 0; z-index: 9999; 
+        }
         .logo { font-size: 1.3rem; font-weight: 900; color: var(--primary); text-transform: uppercase; letter-spacing: 1px; }
-        .hero { background: var(--dark); color: white; padding: 100px 5% 150px; text-align: center; clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%); margin-bottom: -80px; }
+
+        /* HERO */
+        .hero { 
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1350&q=80');
+            background-size: cover; background-position: center; color: white; padding: 100px 5% 150px; 
+            text-align: center; clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%); 
+            margin-bottom: -80px; 
+        }
         .hero h1 { font-size: 3.5rem; font-weight: 900; color: var(--primary); line-height: 1.1; margin-bottom: 20px; }
         .hero p { font-size: 1.2rem; opacity: 0.8; max-width: 600px; margin: 0 auto; }
+
+        /* SLIDER SHOWCASE (FINTO TELEFONO) */
         .showcase { padding: 100px 0 50px; background: var(--light); position: relative; }
         .swiper { width: 100%; padding: 50px 0; }
-        .swiper-slide { width: 280px; height: 580px; background: #000; border-radius: 45px; border: 12px solid #222; box-shadow: 0 30px 60px rgba(0,0,0,0.3); transition: 0.5s; overflow: hidden; filter: grayscale(100%); }
+        .swiper-slide { 
+            width: 280px; height: 580px; background: #000; 
+            border-radius: 45px; border: 12px solid #222; 
+            box-shadow: 0 30px 60px rgba(0,0,0,0.3); 
+            transition: 0.5s; overflow: hidden;
+            filter: grayscale(100%);
+        }
         .swiper-slide img { width: 100%; height: 100%; object-fit: cover; }
         .swiper-slide-active { filter: grayscale(0%); border-color: var(--primary); transform: scale(1.08); z-index: 10; }
+
+        /* Frecce dello slider */
         .swiper-button-next, .swiper-button-prev { color: var(--primary) !important; font-weight: bold; }
         .swiper-button-next:after, .swiper-button-prev:after { font-size: 30px !important; }
+
+        /* PREZZI */
         .container { padding: 60px 5%; max-width: 1200px; margin: 0 auto; }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
-        .card { background: white; padding: 40px 30px; border-radius: 30px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.3s; border: 1px solid #eee; }
+        .card { 
+            background: white; padding: 40px 30px; border-radius: 30px; 
+            text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
+            transition: 0.3s; border-bottom: 5px solid #eee; 
+            display: flex; flex-direction: column;
+        }
         .card:hover { transform: translateY(-10px); border-color: var(--primary); }
+        
+        /* IMMAGINI PIANI CHE TORNANO A COLORI */
+        .card img { 
+            width: 100%; height: 200px; object-fit: cover; border-radius: 15px; 
+            margin-bottom: 20px; filter: grayscale(100%); transition: 0.5s;
+        }
+        .card:hover img { filter: grayscale(0%); }
+
         .card h3 { font-size: 1.6rem; font-weight: 800; margin-bottom: 10px; }
         .price { font-size: 3.5rem; font-weight: 900; color: var(--primary); margin: 15px 0; }
-        .features { list-style: none; margin: 25px 0; text-align: left; }
+        
+        .features { list-style: none; margin: 25px 0; text-align: left; flex-grow: 1; }
         .features li { margin-bottom: 12px; padding-left: 30px; position: relative; font-size: 0.95rem; }
         .features li::before { content: "✓"; position: absolute; left: 0; color: #4CAF50; font-weight: bold; }
-        .btn { display: inline-block; padding: 18px 40px; background: var(--primary); color: white; text-decoration: none; border-radius: 50px; font-weight: 700; text-transform: uppercase; transition: 0.3s; border: none; cursor: pointer; text-align: center; width: 100%; font-size: 1rem; }
+
+        /* BOTTONI */
+        .btn { 
+            display: inline-block; padding: 18px 40px; background: var(--primary); 
+            color: white; text-decoration: none; border-radius: 50px; 
+            font-weight: 700; text-transform: uppercase; transition: 0.3s; 
+            border: none; cursor: pointer; text-align: center; width: 100%; font-size: 1rem; 
+        }
         .btn:hover { background: #e68900; transform: scale(1.02); }
-        .all-in { background: var(--dark); color: white; border-radius: 40px; padding: 80px 40px; margin-top: 100px; text-align: center; border: 2px solid var(--primary); }
+
+        /* ALL IN OFFER */
+        .all-in { 
+            background: var(--dark); color: white; border-radius: 40px; 
+            padding: 80px 40px; margin-top: 100px; text-align: center; 
+            border: 2px solid var(--primary); 
+        }
         .all-in h2 { color: var(--primary); font-size: 2.8rem; font-weight: 900; margin-bottom: 10px; }
-        .all-in-details { max-width: 800px; margin: 40px auto; text-align: left; background: rgba(255,255,255,0.05); padding: 40px; border-radius: 25px; border-left: 5px solid var(--primary); }
+        .all-in img { 
+            width: 100%; max-width: 900px; height: 400px; object-fit: cover; 
+            border-radius: 20px; margin-bottom: 30px; filter: grayscale(100%); transition: 0.5s;
+        }
+        .all-in:hover img { filter: grayscale(0%); }
+        
+        .all-in-details { 
+            max-width: 800px; margin: 40px auto; text-align: left; 
+            background: rgba(255,255,255,0.05); padding: 40px; 
+            border-radius: 25px; border-left: 5px solid var(--primary); 
+        }
         .all-in-details p { margin-bottom: 15px; font-size: 1.1rem; }
+
+        /* FOOTER */
         footer { background: #000; color: white; padding: 80px 5% 40px; text-align: center; }
         .footer-mail { color: var(--primary); text-decoration: none; font-size: 1.5rem; font-weight: 900; display: block; margin-bottom: 20px; }
-        @media (max-width: 768px) { .hero h1 { font-size: 2.5rem; } .swiper-slide { width: 230px; height: 480px; } .all-in h2 { font-size: 2rem; } }
+        
+        @media (max-width: 768px) { 
+            .hero h1 { font-size: 2.5rem; } 
+            .swiper-slide { width: 230px; height: 480px; } 
+            .all-in h2 { font-size: 2rem; }
+            .all-in img { height: 250px; }
+        }
     </style>
 </head>
 <body>
-<nav><div class="logo">Risto Control Pro</div><a href="mailto:ristocontrolprofessional@gmail.com" class="btn" style="width:auto; padding: 10px 20px; font-size: 0.7rem;">Contattaci</a></nav>
-<section class="hero"><h1>Risto Control Professional</h1><p>La soluzione completa per la gestione intelligente del tuo ristorante o pizzeria.</p></section>
+
+<nav>
+    <div class="logo">Risto Control Pro</div>
+    <a href="mailto:ristocontrolprofessional@gmail.com" class="btn" style="width:auto; padding: 10px 20px; font-size: 0.7rem;">Contattaci</a>
+</nav>
+
+<section class="hero">
+    <h1>Risto Control Professional</h1>
+    <p>La soluzione completa per la gestione intelligente del tuo locale.</p>
+</section>
+
+<!-- SHOWCASE SLIDER (Tutti i tuoi screenshot) -->
 <section class="showcase">
     <h2 style="text-align:center; font-weight:900; text-transform:uppercase; letter-spacing:2px; margin-bottom:20px;">L'App in Azione</h2>
     <div class="swiper mySwiper">
@@ -83,56 +172,98 @@
         <div class="swiper-pagination"></div>
     </div>
 </section>
+
 <div class="container">
     <div class="grid" id="piani">
+        <!-- PIANO ENTRY -->
         <div class="card">
+            <img src="https://images.unsplash.com/photo-1550966841-3ee7adac169a?w=500" alt="Sala">
             <h3>PIANO ENTRY</h3>
             <div class="price">€ 59<small style="font-size:1rem; color:#999;">/mese</small></div>
-            <ul class="features"><li>1 Sala dedicata</li><li>Fino a 15 Tavoli</li><li>Comande Illimitate</li><li>Assistenza Standard</li></ul>
+            <ul class="features">
+                <li>1 Sala dedicata</li>
+                <li>Fino a 15 Tavoli</li>
+                <li>Comande Illimitate</li>
+                <li>Assistenza Standard</li>
+            </ul>
             <a href="https://buy.stripe.com/7sYeVfezF5SQ6EL1mY2Ry00" class="btn">Attiva Ora</a>
         </div>
+        <!-- PIANO SMART -->
         <div class="card" style="border: 3px solid var(--primary);">
+            <img src="https://images.unsplash.com/photo-1593504049359-74330189a355?w=500" alt="Pizzeria">
             <div style="background:var(--primary); color:white; font-size:0.6rem; font-weight:900; padding:4px 12px; border-radius:10px; display:inline-block; margin-bottom:10px;">CONSIGLIATO</div>
             <h3>PIANO SMART</h3>
             <div class="price">€ 89<small style="font-size:1rem; color:#999;">/mese</small></div>
-            <ul class="features"><li>1 Sala dedicata</li><li>Fino a 49 Tavoli</li><li>Monitor Cucina & Pizzeria</li><li>Supporto Telefonico</li></ul>
+            <ul class="features">
+                <li>1 Sala dedicata</li>
+                <li>Fino a 49 Tavoli</li>
+                <li>Monitor Cucina & Pizzeria</li>
+                <li>Supporto Telefonico</li>
+            </ul>
             <a href="https://buy.stripe.com/aFa14p639che7IPc1C2Ry01" class="btn">Attiva Ora</a>
         </div>
+        <!-- PIANO PRO -->
         <div class="card">
+            <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=500" alt="Gestione">
             <h3>PIANO PRO</h3>
             <div class="price">€ 129<small style="font-size:1rem; color:#999;">/mese</small></div>
-            <ul class="features"><li>3 Sale / 155 Tavoli</li><li>Assistenza VIP Prioritaria</li><li>Gestione Magazzino & Spesa</li><li>Tutte le funzioni attive</li></ul>
+            <ul class="features">
+                <li>3 Sale / 155 Tavoli</li>
+                <li>Assistenza VIP Prioritaria</li>
+                <li>Gestione Magazzino & Spesa</li>
+                <li>Tutte le funzioni attive</li>
+            </ul>
             <a href="https://buy.stripe.com/eVq4gB2QX6WUbZ52r22Ry02" class="btn">Attiva Ora</a>
         </div>
     </div>
+
+    <!-- OFFERTA CHIAVI IN MANO -->
     <div class="all-in">
+        <img src="https://images.unsplash.com/photo-1577106263724-2c8e03bfe9cf?w=1200" alt="Brigata">
         <h2>SOLUZIONE CHIAVI IN MANO</h2>
-        <p style="font-size: 1.2rem; opacity: 0.7;">Tutto l'hardware e la configurazione inclusi.</p>
+        <p style="font-size: 1.2rem; opacity: 0.7;">Puntiamo alla perfezione del tuo locale.</p>
         <div class="price" style="color:white; font-size: 4.5rem; margin: 30px 0;">€ 2.500</div>
+        
         <div class="all-in-details">
             <p>🚀 <b>SETUP COMPLETO:</b> Configurazione software e rete in 24 ore.</p>
             <p>📦 <b>HARDWARE PRO:</b> 2 Tablet, 2 Palmari, 4 Stampanti Termiche.</p>
             <p>🎓 <b>FORMAZIONE:</b> Corso intensivo per tutto il tuo staff.</p>
             <p>🔧 <b>CUSTOM:</b> Carichiamo noi il tuo menù e disegniamo le tue sale.</p>
         </div>
+
         <p style="font-style: italic; color: var(--primary); margin-bottom: 40px; font-size: 1.2rem;">"La tecnologia invisibile che fa girare il tuo locale come un orologio."</p>
         <a href="mailto:ristocontrolprofessional@gmail.com?subject=Info 2500" class="btn" style="background:white; color:black; width: auto; padding: 25px 80px; font-size: 1.1rem;">RICHIEDI SOPRALLUOGO GRATUITO</a>
     </div>
 </div>
+
 <footer>
     <a href="mailto:ristocontrolprofessional@gmail.com" class="footer-mail">ristocontrolprofessional@gmail.com</a>
     <p style="margin-top:20px; font-weight:bold; letter-spacing: 2px;">WWW.RISTOCONTROLPROFESSIONAL.IT</p>
-    <div style="margin-top:40px; opacity:0.3;"><img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Stripe_Logo%2C_revised_2016.svg" height="20"></div>
+    <div style="margin-top:40px; opacity:0.3;">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Stripe_Logo%2C_revised_2016.svg" height="20">
+    </div>
     <p style="font-size:0.7rem; color:#444; margin-top:40px;">&copy; 2024 Risto Control Professional di Gennaro Bevo. P.IVA Forfettaria.</p>
 </footer>
+
+<!-- Swiper JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
     var swiper = new Swiper(".mySwiper", {
-        effect: "coverflow", grabCursor: true, centeredSlides: true, slidesPerView: "auto",
-        coverflowEffect: { rotate: 10, stretch: 0, depth: 250, modifier: 1, slideShadows: true },
+        effect: "coverflow",
+        grabCursor: true,
+        centeredSlides: true,
+        slidesPerView: "auto",
+        coverflowEffect: { 
+            rotate: 10, 
+            stretch: 0, 
+            depth: 250, 
+            modifier: 1, 
+            slideShadows: true 
+        },
         pagination: { el: ".swiper-pagination", clickable: true },
         navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
-        loop: true, autoplay: false
+        loop: true,
+        autoplay: false 
     });
 </script>
 </body>
