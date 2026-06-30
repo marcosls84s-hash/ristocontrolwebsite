@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Risto Control Professional | Digitalizzazione Ristorazione</title>
     
-    <!-- Google Fonts e Swiper CSS -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
@@ -28,6 +27,12 @@
         .logo-container { display: flex; align-items: center; gap: 12px; }
         .logo-img-nav { height: 45px; width: auto; border-radius: 8px; }
         .logo-text { font-size: 1.2rem; font-weight: 900; color: var(--primary); text-transform: uppercase; letter-spacing: 1px; }
+        
+        /* CONTENITORE SOCIAL NELLA NAV */
+        .nav-right { display: flex; align-items: center; gap: 20px; }
+        .social-links { display: flex; align-items: center; gap: 15px; }
+        .social-icon { display: flex; align-items: center; justify-content: center; transition: transform 0.3s, fill 0.3s; fill: #ffffff; }
+        .social-icon:hover { transform: scale(1.15); fill: var(--primary); }
 
         /* HERO SECTION */
         .hero { background: var(--dark); color: white; padding: 80px 5% 150px; text-align: center; clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%); margin-bottom: -80px; }
@@ -82,7 +87,14 @@
         footer { background: #000; color: white; padding: 80px 5% 40px; text-align: center; }
         .footer-mail { color: var(--primary); text-decoration: none; font-size: 1.5rem; font-weight: 900; display: block; margin-bottom: 20px; }
         
-        @media (max-width: 768px) { .hero h1 { font-size: 2.5rem; } .swiper-slide { width: 230px; height: 480px; } .all-in h2 { font-size: 2rem; } .all-in img { height: 250px; } }
+        @media (max-width: 768px) { 
+            .hero h1 { font-size: 2.5rem; } 
+            .swiper-slide { width: 230px; height: 480px; } 
+            .all-in h2 { font-size: 2rem; } 
+            .all-in img { height: 250px; } 
+            .social-links { gap: 10px; }
+            .social-icon svg { height: 20px; width: 20px; }
+        }
     </style>
 </head>
 <body>
@@ -92,7 +104,21 @@
         <img src="https://www.image2url.com/r2/default/images/1782398593140-ecc078d6-b48b-462f-9cd7-2d8e5604a727.png" alt="Logo" class="logo-img-nav">
         <span class="logo-text">Risto Control Pro</span>
     </div>
-    <a href="mailto:ristocontrolprofessional@gmail.com" class="btn" style="width:auto; padding: 10px 20px; font-size: 0.7rem;">Contattaci</a>
+    <div class="nav-right">
+        <div class="social-links">
+            <a href="https://www.youtube.com/@RISTOCONTROL" target="_blank" class="social-icon" aria-label="YouTube">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 24 24">
+                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c18.723.505 9.377.505 9.377.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                </svg>
+            </a>
+            <a href="https://www.tiktok.com/@ristocontrolprofe?_r=1&_t=ZN-97eODVqmiog" target="_blank" class="social-icon" aria-label="TikTok">
+                <svg xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="0 0 24 24">
+                    <path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.05 1.63 4.21 1.05.11 2.12.12 3.18.11v3.89c-.99.01-1.99-.14-2.94-.46a6.115 6.115 0 0 1-2.27-1.39c-.04 2.87-.02 5.75-.03 8.62-.03 1.42-.42 2.86-1.21 4.02-1.38 2.12-3.97 3.29-6.49 2.92-2.54-.31-4.79-2.21-5.39-4.72-.81-3.18 1.15-6.6 4.34-7.22.42-.09.85-.13 1.28-.13V9.82c-2.11.08-4.14 1.2-5.18 3.04-1.39 2.37-1.12 5.6 0.74 7.64 1.76 1.99 4.7 2.45 6.96 1.15 1.78-1.01 2.76-2.99 2.73-5.05.02-4.36.01-8.72.01-13.08-.88.63-1.91 1.04-2.98 1.19-.13-1.35-.13-2.7 0-4.05.94.13 1.89.5 2.68 1.07.28-.96.42-1.95.42-2.93z"/>
+                </svg>
+            </a>
+        </div>
+        <a href="mailto:ristocontrolprofessional@gmail.com" class="btn" style="width:auto; padding: 10px 20px; font-size: 0.7rem;">Contattaci</a>
+    </div>
 </nav>
 
 <section class="hero">
@@ -108,7 +134,6 @@
             <div class="swiper-slide"><img src="https://www.image2url.com/r2/default/images/1782778830980-0e6163ab-9f02-4b9b-a2e1-9941ebebfdbb.png"></div>
             <div class="swiper-slide"><img src="https://www.image2url.com/r2/default/images/1782778881863-5e8a4c93-a937-490f-ba65-85916a582023.png"></div>
             <div class="swiper-slide"><img src="https://www.image2url.com/r2/default/images/1782778930415-c7be3e81-2600-4974-810a-7ca6287e6927.png"></div>
-            <div class="swiper-slide"><img src="https://www.image2url.com/r2/default/images/1782778976531-aa5bacc5-3c33-4ee0-ae30-efab29682119.png"></div>
             <div class="swiper-slide"><img src="https://www.image2url.com/r2/default/images/1782779036607-c3f36061-2489-4322-be16-7eade4481942.png"></div>
             <div class="swiper-slide"><img src="https://www.image2url.com/r2/default/images/1782779095846-7655bc8e-04aa-4f0e-aec0-1bad1a1dd7da.png"></div>
             <div class="swiper-slide"><img src="https://www.image2url.com/r2/default/images/1782779204036-83e6e15e-d245-4ad6-832f-6339f0a513f9.png"></div>
@@ -135,7 +160,6 @@
             <div class="swiper-slide"><img src="https://plain-weur-prod-public.komododecks.com/202606/30/DvDcToz7lSPHxhwtfJJN/image.png"></div>
         </div>
     </div>
-    <!-- CONTROLLI SOTTO LO SLIDER -->
     <div class="slider-controls">
         <div class="nav-btn custom-prev">❮</div>
         <div class="custom-pagination"></div>
@@ -145,7 +169,6 @@
 
 <div class="container">
     <div class="grid" id="piani">
-        <!-- PIANO ENTRY -->
         <div class="card">
             <img src="https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&w=600" alt="Sala">
             <h3>PIANO ENTRY</h3>
@@ -153,7 +176,6 @@
             <ul class="features"><li>1 Sala dedicata</li><li>Fino a 15 Tavoli</li><li>Comande Illimitate</li><li>Assistenza Standard</li></ul>
             <a href="https://buy.stripe.com/7sYeVfezF5SQ6EL1mY2Ry00" class="btn">Attiva Ora</a>
         </div>
-        <!-- PIANO SMART -->
         <div class="card" style="border: 3px solid var(--primary);">
             <img src="https://images.pexels.com/photos/1566837/pexels-photo-1566837.jpeg?auto=compress&w=600" alt="Pizzeria">
             <div style="background:var(--primary); color:white; font-size:0.6rem; font-weight:900; padding:4px 12px; border-radius:10px; display:inline-block; margin-bottom:10px;">CONSIGLIATO</div>
@@ -162,7 +184,6 @@
             <ul class="features"><li>1 Sala dedicata</li><li>Fino a 49 Tavoli</li><li>Monitor Cucina & Pizzeria</li><li>Supporto Telefonico</li></ul>
             <a href="https://buy.stripe.com/aFa14p639che7IPc1C2Ry01" class="btn">Attiva Ora</a>
         </div>
-        <!-- PIANO PRO -->
         <div class="card">
             <img src="https://images.pexels.com/photos/1414235/pexels-photo-1414235.jpeg?auto=compress&w=600" alt="Gestione">
             <h3>PIANO PRO</h3>
@@ -172,7 +193,6 @@
         </div>
     </div>
 
-    <!-- OFFERTA CHIAVI IN MANO -->
     <div class="all-in">
         <img src="https://images.unsplash.com/photo-1577106263724-2c8e03bfe9cf?w=1200" alt="Brigata">
         <h2>SOLUZIONE CHIAVI IN MANO</h2>
@@ -194,7 +214,6 @@
     <p style="font-size:0.7rem; color:#444; margin-top:40px;">&copy; 2024 Risto Control Professional di Gennaro Bevo.</p>
 </footer>
 
-<!-- Swiper JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
     var swiper = new Swiper(".mySwiper", {
