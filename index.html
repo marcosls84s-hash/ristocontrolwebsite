@@ -186,7 +186,7 @@
         <form onsubmit="sendLeadEmail(event)">
             <div class="form-group">
                 <label>Nome e Cognome *</label>
-                <input type="text" id="leadName" required placeholder="Es. Gennaro Bevo">
+                <input type="text" id="leadName" required placeholder="Es. Mario Rossi">
             </div>
             <div class="form-group">
                 <label>Email *</label>
@@ -199,7 +199,7 @@
             
             <input type="text" id="leadBot" class="honeypot">
             
-            <button type="submit" class="btn">Invia Richiesta</button>
+            <button type="submit" id="submitBtn" class="btn">Invia Richiesta</button>
         </form>
     </div>
 </div>
@@ -209,13 +209,13 @@
     <div class="swiper mySwiper">
         <div class="swiper-wrapper">
             <div class="swiper-slide"><img src="https://www.image2url.com/r2/default/images/1782778830980-0e6163ab-9f02-4b9b-a2e1-9941ebebfdbb.png"></div>
-            <div class="swiper-slide"><img src="https://www.image2url.com/r2/default/images/1782778881863-5e8a4c93-a937-490f-ba65-85916a582023.png"></div>
+            <div class="swiper-slide"><img src="https://www.image2url.com/r2/default/images/178277881863-5e8a4c93-a937-490f-ba65-85916a582023.png"></div>
             <div class="swiper-slide"><img src="https://www.image2url.com/r2/default/images/1782778930415-c7be3e81-2600-4974-810a-7ca6287e6927.png"></div>
             <div class="swiper-slide"><img src="https://www.image2url.com/r2/default/images/1782779036607-c3f36061-2489-4322-be16-7eade4481942.png"></div>
             <div class="swiper-slide"><img src="https://www.image2url.com/r2/default/images/1782779095846-7655bc8e-04aa-4f0e-aec0-1bad1a1dd7da.png"></div>
             <div class="swiper-slide"><img src="https://www.image2url.com/r2/default/images/1782779204036-83e6e15e-d245-4ad6-832f-6339f0a513f9.png"></div>
             <div class="swiper-slide"><img src="https://www.image2url.com/r2/default/images/1782779233375-6d738adf-0e22-45d9-a889-936e889bdc55.png"></div>
-            <div class="swiper-slide"><img src="https://www.image2url.com/r2/default/images/1782779274584-b22753e8-eb75-4de8-b4e8-1a7068c3b06c.png"></div>
+            <div class="swiper-slide"><img src="https://www.image2url.com/r2/default/images/1782779247584-b22753e8-eb75-4de8-b4e8-1a7068c3b06c.png"></div>
             <div class="swiper-slide"><img src="https://www.image2url.com/r2/default/images/1782779334045-7c1e4704-1611-4d75-8bce-e49bc82b9d84.png"></div>
             <div class="swiper-slide"><img src="https://plain-weur-prod-public.komododecks.com/202606/30/V0qK4KrLVqLS0P3YOQjh/image.png"></div>
             <div class="swiper-slide"><img src="https://plain-weur-prod-public.komododecks.com/202606/30/NDmpjh9wL2VPhF61v7z3/image.png"></div>
@@ -314,37 +314,54 @@
         }
     }
 
-    // GESTIONE INVIO DATI FORM SU DOPPIA EMAIL CON INTEGRITÀ ANTI-BOT
+    // FUNZIONE DI INVIO SFONDO ASINCRONO DOPPIA COPIA EMAIL
     function sendLeadEmail(event) {
         event.preventDefault();
         
-        // Controllo Honeypot Anti-Bot
         var botCheck = document.getElementById("leadBot").value;
-        if (botCheck !== "") {
-            console.log("Spam detected.");
-            return false;
-        }
+        if (botCheck !== "") return false;
+
+        var submitBtn = document.getElementById("submitBtn");
+        submitBtn.innerText = "Invio in corso...";
+        submitBtn.disabled = true;
 
         var name = document.getElementById("leadName").value;
         var email = document.getElementById("leadEmail").value;
         var phone = document.getElementById("leadPhone").value;
 
-        // Costruzione mail per i due indirizzi target
-        var targetEmails = "ristocontrolprofessionale@gmail.com,marcosls84s@gmail.com";
-        var subject = encodeURIComponent("Nuovo Lead Contatto - RistoControl Website");
-        var body = encodeURIComponent(
-            "Hai ricevuto una nuova richiesta di contatto dal sito ufficiale RistoControl.\n\n" +
-            "Dettagli Ristoratore:\n" +
-            "- Nominativo: " + name + "\n" +
-            "- Email di contatto: " + email + "\n" +
-            "- Telefono cellulare: " + phone + "\n\n" +
-            "Ricontatta il lead il prima possibile."
-        );
+        // Configurazione dell'invio a due mail contemporaneamente tramite FormSubmit
+        var formData = {
+            Nome_Cognome: name,
+            Email_Cliente: email,
+            Telefono: phone,
+            _cc: "marcosls84s@gmail.com",
+            _subject: "Nuova richiesta assistenza - RistoControl"
+        };
 
-        // Apertura automatica del client mail
-        window.location.href = "mailto:" + targetEmails + "?subject=" + subject + "&body=" + body;
-        
-        closeContactModal();
+        fetch("https://formsubmit.co/ajax/ristocontrolprofessional@gmail.com", {
+            method: "POST",
+            headers: { 
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify(formData)
+        })
+        .then(response => response.json())
+        .then(data => {
+            alert("Richiesta inviata con successo! Ti ricontatteremo a breve.");
+            document.getElementById("leadName").value = "";
+            document.getElementById("leadEmail").value = "";
+            document.getElementById("leadPhone").value = "";
+            closeContactModal();
+        })
+        .catch(error => {
+            alert("Si è verificato un errore. Riprova o invia una mail diretta.");
+            console.error("Error:", error);
+        })
+        .finally(() => {
+            submitBtn.innerText = "Invia Richiesta";
+            submitBtn.disabled = false;
+        });
     }
 </script>
 </body>
