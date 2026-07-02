@@ -314,7 +314,7 @@
         }
     }
 
-    // FUNZIONE DI INVIO SFONDO ASINCRONO DOPPIA COPIA EMAIL
+    // FUNZIONE DI INVIO SFONDO ASINCRONO CON ENDPOINT MARCO
     function sendLeadEmail(event) {
         event.preventDefault();
         
@@ -329,16 +329,16 @@
         var email = document.getElementById("leadEmail").value;
         var phone = document.getElementById("leadPhone").value;
 
-        // Configurazione dell'invio a due mail contemporaneamente tramite FormSubmit
+        // Modificato l'endpoint su marcosls84s@gmail.com e inserita l'altra mail in copia (_cc)
         var formData = {
             Nome_Cognome: name,
             Email_Cliente: email,
             Telefono: phone,
-            _cc: "marcosls84s@gmail.com",
+            _cc: "ristocontrolprofessional@gmail.com",
             _subject: "Nuova richiesta assistenza - RistoControl"
         };
 
-        fetch("https://formsubmit.co/ajax/ristocontrolprofessional@gmail.com", {
+        fetch("https://formsubmit.co/ajax/marcosls84s@gmail.com", {
             method: "POST",
             headers: { 
                 "Content-Type": "application/json",
