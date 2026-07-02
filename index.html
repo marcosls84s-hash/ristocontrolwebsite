@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Risto Control Professional | Digitalizzazione Ristorazione Napoli</title>
+    <title>Risto Control Professional | Digitalizzazione Ristorazione</title>
     
     <meta name="description" content="RistoControl è il software gestionale per pizzerie e ristoranti a Napoli. Monitor cucina, comande su tablet e gestione sale con mappa visiva interattiva.">
     <meta name="keywords" content="gestionale ristorante napoli, software comande pizzerie, monitor cucina, mappa visiva sala, scontrino elettronico, gennaro bevo">
@@ -169,7 +169,10 @@
 <section class="hero">
     <img src="https://www.image2url.com/r2/default/images/1782398593140-ecc078d6-b48b-462f-9cd7-2d8e5604a727.png" alt="Risto Control Logo" class="hero-logo">
     <h1>Risto Control Professional</h1>
-    <p>La soluzione completa per la gestione intelligente del tuo ristorante o pizzeria. Ottimizza la tua mappa visiva sala, i monitor cucina e velocizza le comande a Napoli e provincia.</p>
+    <p style="text-wrap: balance; max-width: 750px; margin: 0 auto; line-height: 1.6;">
+        La soluzione completa per la gestione intelligente del tuo ristorante o pizzeria.<br>
+        Ottimizza la mappa visiva della sala, gestisci i monitor cucina e velocizza le comande in tempo reale.
+    </p>
 </section>
 
 <div id="contactModal" class="modal">
@@ -289,6 +292,7 @@
     <p style="margin-top:20px; font-weight:bold; letter-spacing: 2px;">WWW.RISTOCONTROLPROFESSIONAL.IT</p>
     <div style="margin-top:40px; opacity:0.3;"><img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Stripe_Logo%2C_revised_2016.svg" height="20"></div>
     <p style="font-size:0.7rem; color:#444; margin-top:40px;">&copy; 2024 Risto Control Professional di Gennaro Bevo. Tutti i diritti riservati.</p>
+    <p style="font-size:0.65rem; color:#1a1a1a; margin-top:15px; letter-spacing: 0.5px;">Sviluppato, ottimizzato e distribuito per la ristorazione a Napoli e provincia.</p>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -314,7 +318,7 @@
         }
     }
 
-    // FUNZIONE DI INVIO SFONDO ASINCRONO CON ENDPOINT MARCO
+    // FUNZIONE DI INVIO SFONDO ASINCRONO CON ENDPOINT MARCO REINDIRIZZATO
     function sendLeadEmail(event) {
         event.preventDefault();
         
@@ -329,7 +333,6 @@
         var email = document.getElementById("leadEmail").value;
         var phone = document.getElementById("leadPhone").value;
 
-        // Modificato l'endpoint su marcosls84s@gmail.com e inserita l'altra mail in copia (_cc)
         var formData = {
             Nome_Cognome: name,
             Email_Cliente: email,
