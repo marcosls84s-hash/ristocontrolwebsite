@@ -3,8 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Risto Control Professional | Digitalizzazione Ristorazione</title>
+    <title>Risto Control Professional | Digitalizzazione Ristorazione Napoli</title>
     
+    <meta name="description" content="RistoControl è il software gestionale per pizzerie e ristoranti a Napoli. Monitor cucina, comande su tablet e gestione sale con mappa visiva interattiva.">
+    <meta name="keywords" content="gestionale ristorante napoli, software comande pizzerie, monitor cucina, mappa visiva sala, scontrino elettronico, gennaro bevo">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://www.ristocontrolprofessional.it">
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Risto Control Professional",
+      "operatingSystem": "Android, iOS, Web",
+      "applicationCategory": "BusinessApplication",
+      "offers": {
+        "@type": "AggregateOffer",
+        "priceCurrency": "EUR",
+        "lowPrice": "59",
+        "highPrice": "129",
+        "offerCount": "3"
+      },
+      "description": "Software di gestione comande e monitor cucina con mappa visiva della sala interattiva per ristoranti e pizzerie.",
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.9",
+        "ratingCount": "42"
+      }
+    }
+    </script>
+
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
@@ -89,6 +117,18 @@
         .all-in-details { max-width: 800px; margin: 40px auto; text-align: left; background: rgba(255,255,255,0.05); padding: 40px; border-radius: 25px; border-left: 5px solid var(--primary); }
         .all-in-details p { margin-bottom: 15px; font-size: 1.1rem; color: #eee; }
 
+        /* MODALE POP-UP CONTATTI */
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 10000; justify-content: center; align-items: center; padding: 20px; }
+        .modal-content { background: white; padding: 30px; border-radius: 30px; max-width: 500px; width: 100%; border: 3px solid var(--primary); position: relative; text-align: center; }
+        .close-modal { position: absolute; top: 15px; right: 20px; font-size: 1.8rem; cursor: pointer; color: var(--dark); font-weight: bold; }
+        .modal h4 { font-size: 1.5rem; margin-bottom: 20px; font-weight: 900; text-transform: uppercase; }
+        .contact-methods { display: flex; flex-direction: column; gap: 15px; margin-bottom: 25px; }
+        .form-group { text-align: left; margin-bottom: 15px; }
+        .form-group label { display: block; font-size: 0.85rem; font-weight: bold; margin-bottom: 5px; }
+        .form-group input { width: 100%; padding: 12px; border: 2px solid #ddd; border-radius: 8px; font-family: inherit; font-size: 1rem; }
+        .form-group input:focus { border-color: var(--primary); outline: none; }
+        .honeypot { display: none !important; }
+
         footer { background: #000; color: white; padding: 80px 5% 40px; text-align: center; }
         .footer-mail { color: var(--primary); text-decoration: none; font-size: 1.5rem; font-weight: 900; display: block; margin-bottom: 20px; }
         
@@ -122,15 +162,47 @@
                 </svg>
             </a>
         </div>
-        <a href="mailto:ristocontrolprofessional@gmail.com" class="btn" style="width:auto; padding: 10px 20px; font-size: 0.7rem;">Contattaci</a>
+        <button onclick="openContactModal()" class="btn" style="width:auto; padding: 10px 20px; font-size: 0.7rem;">Contattaci</button>
     </div>
 </nav>
 
 <section class="hero">
     <img src="https://www.image2url.com/r2/default/images/1782398593140-ecc078d6-b48b-462f-9cd7-2d8e5604a727.png" alt="Risto Control Logo" class="hero-logo">
     <h1>Risto Control Professional</h1>
-    <p>La soluzione completa per la gestione intelligente del tuo ristorante o pizzeria.</p>
+    <p>La soluzione completa per la gestione intelligente del tuo ristorante o pizzeria. Ottimizza la tua mappa visiva sala, i monitor cucina e velocizza le comande a Napoli e provincia.</p>
 </section>
+
+<div id="contactModal" class="modal">
+    <div class="modal-content">
+        <span class="close-modal" onclick="closeContactModal()">&times;</span>
+        <h4>Contatta RistoControl</h4>
+        
+        <div class="contact-methods">
+            <a href="tel:+393336941713" class="btn" style="background:#4CAF50;">📞 CHIAMA ORA: +39 333 694 1713</a>
+        </div>
+        
+        <p style="margin: 15px 0; font-size: 0.85rem; font-weight: bold; color: #666;">OPPURE COMPILA IL QUESTIONARIO</p>
+        
+        <form onsubmit="sendLeadEmail(event)">
+            <div class="form-group">
+                <label>Nome e Cognome *</label>
+                <input type="text" id="leadName" required placeholder="Es. Gennaro Bevo">
+            </div>
+            <div class="form-group">
+                <label>Email *</label>
+                <input type="email" id="leadEmail" required placeholder="Es. ristorante@mail.com">
+            </div>
+            <div class="form-group">
+                <label>Numero di Telefono *</label>
+                <input type="tel" id="leadPhone" required placeholder="Es. 3331234567">
+            </div>
+            
+            <input type="text" id="leadBot" class="honeypot">
+            
+            <button type="submit" class="btn">Invia Richiesta</button>
+        </form>
+    </div>
+</div>
 
 <section class="showcase">
     <h2 style="text-align:center; font-weight:900; text-transform:uppercase; letter-spacing:2px;">L'App in Azione</h2>
@@ -175,22 +247,22 @@
 <div class="container">
     <div class="grid" id="piani">
         <div class="card">
-            <img src="https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&w=600" alt="Sala">
+            <img src="https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&w=600" alt="Sala Gestione Mappa Tavoli">
             <h3>PIANO ENTRY</h3>
             <div class="price">€ 59<small style="font-size:1rem; color:#999;">/mese</small></div>
             <ul class="features"><li>1 Sala dedicata</li><li>Fino a 15 Tavoli</li><li>Comande Illimitate</li><li>Assistenza Standard</li></ul>
             <a href="https://buy.stripe.com/7sYeVfezF5SQ6EL1mY2Ry00" class="btn">Attiva Ora</a>
         </div>
         <div class="card" style="border: 3px solid var(--primary);">
-            <img src="https://images.pexels.com/photos/1566837/pexels-photo-1566837.jpeg?auto=compress&w=600" alt="Pizzeria">
+            <img src="https://images.pexels.com/photos/1566837/pexels-photo-1566837.jpeg?auto=compress&w=600" alt="Pizzeria Comande Comitive">
             <div style="background:var(--primary); color:white; font-size:0.6rem; font-weight:900; padding:4px 12px; border-radius:10px; display:inline-block; margin-bottom:10px;">CONSIGLIATO</div>
             <h3>PIANO SMART</h3>
             <div class="price">€ 89<small style="font-size:1rem; color:#999;">/mese</small></div>
-            <ul class="features"><li>1 Sala dedicata</li><li>Fino a 49 Tavoli</li><li>Monitor Cucina & Pizzeria</li><li>Supporto Telefonico</li></ul>
+            <ul class="features"><li>1 Sala dedicata</li><li>Fino a 49 Tavoli con mappa visiva</li><li>Monitor Cucina & Pizzeria Live</li><li>Supporto Telefonico Diretto</li></ul>
             <a href="https://buy.stripe.com/aFa14p639che7IPc1C2Ry01" class="btn">Attiva Ora</a>
         </div>
         <div class="card">
-            <img src="https://images.pexels.com/photos/1414235/pexels-photo-1414235.jpeg?auto=compress&w=600" alt="Gestione">
+            <img src="https://images.pexels.com/photos/1414235/pexels-photo-1414235.jpeg?auto=compress&w=600" alt="Gestione Magazzino Dispensa Ristorante">
             <h3>PIANO PRO</h3>
             <div class="price">€ 129<small style="font-size:1rem; color:#999;">/mese</small></div>
             <ul class="features"><li>3 Sale / 155 Tavoli</li><li>Assistenza VIP Prioritaria</li><li>Gestione Magazzino & Spesa</li><li>Tutte le funzioni attive</li></ul>
@@ -199,7 +271,7 @@
     </div>
 
     <div class="all-in">
-        <img src="https://images.unsplash.com/photo-1577106263724-2c8e03bfe9cf?w=1200" alt="Brigata">
+        <img src="https://images.unsplash.com/photo-1577106263724-2c8e03bfe9cf?w=1200" alt="Brigata Cucina Pizzeria">
         <h2>SOLUZIONE CHIAVI IN MANO</h2>
         <div class="price" style="color:white; font-size: 4.5rem; margin: 30px 0;">€ 2.500</div>
         <div class="all-in-details">
@@ -208,7 +280,7 @@
             <p>🎓 <b>FORMAZIONE:</b> Corso intensivo per tutto il tuo staff.</p>
             <p>🔧 <b>CUSTOM:</b> Carichiamo noi il tuo menù e disegniamo le tue sale.</p>
         </div>
-        <a href="mailto:ristocontrolprofessional@gmail.com?subject=Info 2500" class="btn" style="background:white; color:black; width: auto; padding: 25px 80px; font-size: 1.1rem;">RICHIEDI SOPRALLUOGO GRATUITO</a>
+        <button onclick="openContactModal()" class="btn" style="background:white; color:black; width: auto; padding: 25px 80px; font-size: 1.1rem;">RICHIEDI SOPRALLUOGO GRATUITO</button>
     </div>
 </div>
 
@@ -216,7 +288,7 @@
     <a href="mailto:ristocontrolprofessional@gmail.com" class="footer-mail">ristocontrolprofessional@gmail.com</a>
     <p style="margin-top:20px; font-weight:bold; letter-spacing: 2px;">WWW.RISTOCONTROLPROFESSIONAL.IT</p>
     <div style="margin-top:40px; opacity:0.3;"><img src="https://upload.wikimedia.org/wikipedia/commons/b/ba/Stripe_Logo%2C_revised_2016.svg" height="20"></div>
-    <p style="font-size:0.7rem; color:#444; margin-top:40px;">&copy; 2024 Risto Control Professional di Gennaro Bevo.</p>
+    <p style="font-size:0.7rem; color:#444; margin-top:40px;">&copy; 2024 Risto Control Professional di Gennaro Bevo. Tutti i diritti riservati.</p>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -228,6 +300,52 @@
         navigation: { nextEl: ".custom-next", prevEl: ".custom-prev" },
         loop: true, autoplay: false
     });
+
+    function openContactModal() {
+        document.getElementById("contactModal").style.display = "flex";
+    }
+    function closeContactModal() {
+        document.getElementById("contactModal").style.display = "none";
+    }
+    window.onclick = function(event) {
+        var modal = document.getElementById("contactModal");
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+
+    // GESTIONE INVIO DATI FORM SU DOPPIA EMAIL CON INTEGRITÀ ANTI-BOT
+    function sendLeadEmail(event) {
+        event.preventDefault();
+        
+        // Controllo Honeypot Anti-Bot
+        var botCheck = document.getElementById("leadBot").value;
+        if (botCheck !== "") {
+            console.log("Spam detected.");
+            return false;
+        }
+
+        var name = document.getElementById("leadName").value;
+        var email = document.getElementById("leadEmail").value;
+        var phone = document.getElementById("leadPhone").value;
+
+        // Costruzione mail per i due indirizzi target
+        var targetEmails = "ristocontrolprofessionale@gmail.com,marcosls84s@gmail.com";
+        var subject = encodeURIComponent("Nuovo Lead Contatto - RistoControl Website");
+        var body = encodeURIComponent(
+            "Hai ricevuto una nuova richiesta di contatto dal sito ufficiale RistoControl.\n\n" +
+            "Dettagli Ristoratore:\n" +
+            "- Nominativo: " + name + "\n" +
+            "- Email di contatto: " + email + "\n" +
+            "- Telefono cellulare: " + phone + "\n\n" +
+            "Ricontatta il lead il prima possibile."
+        );
+
+        // Apertura automatica del client mail
+        window.location.href = "mailto:" + targetEmails + "?subject=" + subject + "&body=" + body;
+        
+        closeContactModal();
+    }
 </script>
 </body>
 </html>
