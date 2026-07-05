@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Soluzione Ristorante | Software Gestionale by RistoControl</title>
     
-    <link rel="icon" type="image/jpeg" sizes="192x192" href="https://www.image2url.com/r2/default/images/1783209651526-1d0ece3c-df27-4fe8-8cfa-134de605b403.jpg">
-    <link rel="apple-touch-icon" sizes="192x192" href="https://www.image2url.com/r2/default/images/1783209651526-1d0ece3c-df27-4fe8-8cfa-134de605b403.jpg">
+    <link rel="icon" type="image/jpeg" href="https://www.image2url.com/r2/default/images/1783209651526-1d0ece3c-df27-4fe8-8cfa-134de605b403.jpg">
+    <link rel="apple-touch-icon" href="https://www.image2url.com/r2/default/images/1783209651526-1d0ece3c-df27-4fe8-8cfa-134de605b403.jpg">
 
     <meta name="description" content="Soluzione Ristorante è il software gestionale definitivo per pizzerie e ristoranti creato da RistoControl. Monitor cucina, comande su tablet e mappa sale visiva.">
     <meta name="keywords" content="soluzione ristorante, gestionale ristorante napoli, software comande pizzerie, monitor cucina, mappa visiva sala, scontrino elettronico, gennaro bevo, ristocontrol">
@@ -36,7 +36,7 @@
     }
     </script>
 
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
     <script>
@@ -61,7 +61,7 @@
             border-bottom: 3px solid var(--primary); position: sticky; top: 0; z-index: 9999; 
         }
         .logo-container { display: flex; align-items: center; gap: 12px; }
-        .logo-img-nav { height: 45px; width: auto; border-radius: 8px; }
+        .logo-img-nav { height: 45px; width: auto; border-radius: 50%; border: 2px solid var(--primary); }
         .logo-text { font-size: 1.2rem; font-weight: 900; color: var(--primary); text-transform: uppercase; letter-spacing: 1px; }
         
         /* CONTENITORE SOCIAL NELLA NAV */
@@ -72,7 +72,7 @@
 
         /* HERO SECTION */
         .hero { background: var(--dark); color: white; padding: 80px 5% 150px; text-align: center; clip-path: polygon(0 0, 100% 0, 100% 85%, 0% 100%); margin-bottom: -80px; }
-        .hero-logo { height: 120px; width: auto; margin-bottom: 25px; border-radius: 20px; box-shadow: 0 10px 40px rgba(255,152,0,0.3); background: white; padding: 5px; }
+        .hero-logo { height: 120px; width: auto; margin-bottom: 25px; border-radius: 50%; box-shadow: 0 10px 40px rgba(255,152,0,0.4); border: 3px solid var(--primary); background: white; }
         .hero h1 { font-size: 3.5rem; font-weight: 900; color: var(--primary); line-height: 1.1; margin-bottom: 5px; }
         .hero .brand-tagline { font-size: 1.1rem; text-transform: uppercase; color: #aaa; font-weight: 700; letter-spacing: 2px; margin-bottom: 25px; }
         .hero p { font-size: 1.2rem; opacity: 0.8; max-width: 750px; margin: 0 auto; line-height: 1.6; text-wrap: balance; }
@@ -97,7 +97,21 @@
         .swiper-pagination-bullet { background: #bbb; opacity: 1; width: 10px; height: 10px; }
         .swiper-pagination-bullet-active { background: var(--primary); width: 25px; border-radius: 5px; }
 
-        /* PREZZI */
+        /* SEZIONE 10 FUNZIONI PREMIUM */
+        .features-section { padding: 80px 5%; background: white; text-align: center; }
+        .features-section h2 { font-size: 2.5rem; font-weight: 900; text-transform: uppercase; margin-bottom: 15px; }
+        .features-section .sub { font-size: 1.1rem; color: #666; max-width: 700px; margin: 0 auto 50px auto; }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; max-width: 1200px; margin: 0 auto; }
+        .feature-box { background: var(--light); padding: 30px 20px; border-radius: 20px; text-align: left; border-left: 5px solid var(--dark); transition: 0.3s; }
+        .feature-box:hover { transform: translateY(-5px); border-left-color: var(--primary); box-shadow: 0 10px 25px rgba(0,0,0,0.05); }
+        .feature-box .icon { font-size: 2rem; margin-bottom: 15px; display: inline-block; }
+        .feature-box h4 { font-size: 1.2rem; font-weight: 800; text-transform: uppercase; margin-bottom: 10px; color: var(--dark); }
+        .feature-box p { font-size: 0.95rem; color: #55606e; line-height: 1.5; }
+        .f-badge { display: inline-block; padding: 2px 8px; font-size: 0.75rem; font-weight: bold; border-radius: 5px; margin-top: 8px; }
+        .badge-red { background: #fed7d7; color: #9b1c1c; }
+        .badge-green { background: #c6f6d5; color: #22543d; border: 1px dashed #38a169; }
+
+        /* PREZZI & CONTAINER */
         .container { padding: 60px 5%; max-width: 1200px; margin: 0 auto; }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
         .card { background: white; padding: 40px 30px; border-radius: 30px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.3s; border-bottom: 5px solid #eee; display: flex; flex-direction: column; }
@@ -120,6 +134,7 @@
         .all-in:hover img { filter: grayscale(0%); }
         .all-in-details { max-width: 800px; margin: 40px auto; text-align: left; background: rgba(255,255,255,0.05); padding: 40px; border-radius: 25px; border-left: 5px solid var(--primary); }
         .all-in-details p { margin-bottom: 15px; font-size: 1.1rem; color: #eee; }
+        .gift-tag { background: #fffaf0; color: #ff9800; font-weight: bold; padding: 15px; border-radius: 12px; border: 1px dashed #ff9800; margin-top: 20px; font-size: 1rem; text-transform: uppercase; text-align: center; }
 
         /* MODALE POP-UP CONTATTI */
         .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 10000; justify-content: center; align-items: center; padding: 20px; }
@@ -168,6 +183,7 @@
             .social-links { gap: 10px; }
             .social-icon svg { height: 20px; width: 20px; }
             .work-with-us-btn { font-size: 0.85rem; padding: 12px 25px; }
+            .features-section h2 { font-size: 1.8rem; }
         }
     </style>
 </head>
@@ -175,7 +191,7 @@
 
 <nav>
     <div class="logo-container">
-        <img src="https://www.image2url.com/r2/default/images/1782398593140-ecc078d6-b48b-462f-9cd7-2d8e5604a727.png" alt="Logo" class="logo-img-nav">
+        <img src="https://www.image2url.com/r2/default/images/1783209651526-1d0ece3c-df27-4fe8-8cfa-134de605b403.jpg" alt="Logo" class="logo-img-nav">
         <span class="logo-text">Soluzione Ristorante</span>
     </div>
     <div class="nav-right">
@@ -196,7 +212,7 @@
 </nav>
 
 <section class="hero">
-    <img src="https://www.image2url.com/r2/default/images/1782398593140-ecc078d6-b48b-462f-9cd7-2d8e5604a727.png" alt="Risto Control Logo" class="hero-logo">
+    <img src="https://www.image2url.com/r2/default/images/1783209651526-1d0ece3c-df27-4fe8-8cfa-134de605b403.jpg" alt="Logo Circolare" class="hero-logo">
     <h1>Soluzione Ristorante</h1>
     <div class="brand-tagline">by RistoControl Professional</div>
     <p>
@@ -241,9 +257,10 @@
     <h2 style="text-align:center; font-weight:900; text-transform:uppercase; letter-spacing:2px;">L'App in Azione</h2>
     <div class="swiper mySwiper">
         <div class="swiper-wrapper">
+            <div class="swiper-wrapper">
             <div class="swiper-slide"><img src="https://www.image2url.com/r2/default/images/1782778830980-0e6163ab-9f02-4b9b-a2e1-9941ebebfdbb.png"></div>
             <div class="swiper-slide"><img src="https://www.image2url.com/r2/default/images/1782778881863-5e8a4c93-a937-490f-ba65-85916a582023.png"></div>
-            <div class="swiper-slide"><img src="https://www.image2url.com/r2/default/images/1782779930415-c7be3e81-2600-4974-810a-7ca6287e6927.png"></div>
+            <div class="swiper-slide"><img src="https://www.image2url.com/r2/default/images/1782778930415-c7be3e81-2600-4974-810a-7ca6287e6927.png"></div>
             <div class="swiper-slide"><img src="https://www.image2url.com/r2/default/images/1782779036607-c3f36061-2489-4322-be16-7eade4481942.png"></div>
             <div class="swiper-slide"><img src="https://www.image2url.com/r2/default/images/1782779095846-7655bc8e-04aa-4f0e-aec0-1bad1a1dd7da.png"></div>
             <div class="swiper-slide"><img src="https://www.image2url.com/r2/default/images/1782779204036-83e6e15e-d245-4ad6-832f-6339f0a513f9.png"></div>
@@ -274,6 +291,66 @@
         <div class="nav-btn custom-prev">❮</div>
         <div class="custom-pagination"></div>
         <div class="nav-btn custom-next">❯</div>
+    </div>
+</section>
+
+<section class="features-section">
+    <h2>Perché Scegliere Soluzione Ristorante?</h2>
+    <p class="sub">Lo strumento definitivo nato dall'esperienza diretta in cucina, progettato per azzerare gli errori e massimizzare i profitti del tuo locale.</p>
+    
+    <div class="features-grid">
+        <div class="feature-box">
+            <span class="icon">🖥️</span>
+            <h4>1. Monitor Cucina & Pizzeria</h4>
+            <p>Addio blocchetti di carta e al vecchio campanello che crea ansia. Con un clic il cameriere invia l'ordine a schermo, e la cucina fa suonare il palmare quando il piatto è pronto.</p>
+        </div>
+        <div class="feature-box">
+            <span class="icon">🚦</span>
+            <h4>2. Semaforo Visivo Sala</h4>
+            <p>Non c'è bisogno di leggere: i colori dei tuoi tavoli parlano da soli. Verde (Libero), Arancione (Prendere ordine), Rosso (In servizio), Blu (Tavolo dimenticato, intervieni subito!).</p>
+        </div>
+        <div class="feature-box">
+            <span class="icon">⏳</span>
+            <h4>3. Flusso Automatico Coda-Sala</h4>
+            <p>Sincronizzazione in tempo reale: sposta un cliente dalla coda a un tavolo libero con un tocco. Nome del cliente e numero coperti si caricano da soli, senza errori.</p>
+        </div>
+        <div class="feature-box">
+            <span class="icon">🚨</span>
+            <h4>4. Sicurezza Allergie Attiva</h4>
+            <p>Configura le intolleranze della seduta. Se il cameriere seleziona un piatto rischioso, l'app interrompe l'invio comanda mostrando un allarme visivo.</p>
+            <span class="f-badge badge-red">🚨 BLOCCO DI SICUREZZA</span>
+        </div>
+        <div class="feature-box">
+            <span class="icon">👁️</span>
+            <h4>5. Food Cost & "Occhio Magico"</h4>
+            <p>Controlla i margini dei tuoi piatti live. E per la tua privacy, i dati contabili sugli schermi sono protetti da asterischi: tieni premuto l'occhio per vederli, rilascia per nasconderli.</p>
+        </div>
+        <div class="feature-box">
+            <span class="icon">📲</span>
+            <h4>6. Foto Menù & QR Code Tavoli</h4>
+            <p>Carica le foto dei piatti dalla galleria per i palmari dello staff. Il sistema genera un codice QR automatico per permettere ai clienti di consultare il menù gratis senza ristampe.</p>
+        </div>
+        <div class="feature-box">
+            <span class="icon">👛</span>
+            <h4>7. Borsellino & Meritocrazia</h4>
+            <p>Ogni collaboratore ha il suo report personale. L'app sa chi ha servito il tavolo e gli accredita la vendita, ottimizzando i controlli e stimolando lo staff.</p>
+        </div>
+        <div class="feature-box">
+            <span class="icon">🔥</span>
+            <h4>8. Bacheca Staff & Piatti in PROMO</h4>
+            <p>Chat interna per comunicazioni urgenti del personale. Inoltre lo Chef può spingere i piatti del giorno ad alto margine evidenziandoli in verde con l'icona fiammella.</p>
+            <span class="f-badge badge-green">🔥 PIATTO IN PROMO</span>
+        </div>
+        <div class="feature-box">
+            <span class="icon">🚀</span>
+            <h4>9. Import Menù Lampo & Scarti</h4>
+            <p>Inserimento menù in soli 3 secondi incollando un semplice testo. Include il registro degli scarti (rotture bottiglie, scadenze) per tracciare le perdite invisibili della dispensa.</p>
+        </div>
+        <div class="feature-box">
+            <span class="icon">🍽️</span>
+            <h4>10. Isolamento Portate ("Segue")</h4>
+            <p>I monitor mostrano solo le linee da preparare al momento (es. solo antipasti). Quando la cucina esce con la portata, il sistema sblocca da solo i primi piatti.</p>
+        </div>
     </div>
 </section>
 
@@ -312,6 +389,7 @@
             <p>📦 <b>HARDWARE PRO:</b> 2 Tablet, 2 Palmari, 4 Stampanti Termiche.</p>
             <p>🎓 <b>FORMAZIONE:</b> Corso intensivo per tutto il tuo staff.</p>
             <p>🔧 <b>CUSTOM:</b> Carichiamo noi il tuo menù e disegniamo le tue sale.</p>
+            <div class="gift-tag">🎁 REGALO EXTRA: Gestione delle prenotazioni tramite SITO WEB inclusa all'acquisto!</div>
         </div>
         <button onclick="openContactModal()" class="btn" style="background:white; color:black; width: auto; padding: 25px 80px; font-size: 1.1rem;">RICHIEDI SOPRALLUOGO GRATUITO</button>
     </div>
@@ -332,7 +410,7 @@
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <script>
     var swiper = new Swiper(".mySwiper", {
-        effect: "coverflow", grabCursor: true, centeredSlides: true, slidesPerView: "auto",
+        effect: "coverflow", grabCursor: true, centeredSlides: true, sizesPerView: "auto",
         coverflowEffect: { rotate: 10, stretch: 0, depth: 200, modifier: 1, slideShadows: true },
         pagination: { el: ".custom-pagination", clickable: true },
         navigation: { nextEl: ".custom-next", prevEl: ".custom-prev" },
@@ -403,5 +481,3 @@
 </script>
 </body>
 </html>
-
-inseriamo nel sito quello he abbiamo inserito anche nel pdf le 10 funzioni scritte in breve ma scritte bene ad alto impatto commerciale che attiri e colpisca il ristoratore perche sul sito mancano ! vedi tu dove posizionarle all'interno del codice html
