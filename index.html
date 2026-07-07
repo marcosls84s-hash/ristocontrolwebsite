@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Soluzione Ristorante | Software Gestionale by RistoControl</title>
     
-    <link rel="icon" type="image/jpeg" href="https://www.image2url.com/r2/default/images/1783209651526-1d0ece3c-df27-4fe8-8cfa-134de605b403.jpg">
-    <link rel="apple-touch-icon" href="https://www.image2url.com/r2/default/images/1783209651526-1d0ece3c-df27-4fe8-8cfa-134de605b403.jpg">
+    <link rel="icon" type="image/x-icon" href="https://www.image2url.com/r2/default/images/1783209651526-1d0ece3c-df27-4fe8-8cfa-134de605b403.jpg">
+    <link rel="shortcut icon" type="image/x-icon" href="https://www.image2url.com/r2/default/images/1783209651526-1d0ece3c-df27-4fe8-8cfa-134de605b403.jpg">
+    <link rel="apple-touch-icon" type="image/jpeg" href="https://www.image2url.com/r2/default/images/1783209651526-1d0ece3c-df27-4fe8-8cfa-134de605b403.jpg">
 
     <meta name="description" content="Soluzione Ristorante è il software gestionale definitivo per pizzerie e ristoranti creato da RistoControl. Monitor cucina, comande su tablet e mappa sale visiva.">
     <meta name="keywords" content="soluzione ristorante, gestionale ristorante napoli, software comande pizzerie, monitor cucina, mappa visiva sala, scontrino elettronico, gennaro bevo, ristocontrol">
@@ -24,8 +25,8 @@
         "@type": "AggregateOffer",
         "priceCurrency": "EUR",
         "lowPrice": "59",
-        "highPrice": "129",
-        "offerCount": "3"
+        "highPrice": "4500",
+        "offerCount": "4"
       },
       "description": "Software di gestione comande e monitor cucina con mappa visiva della sala interattiva per ristoranti e pizzerie, sviluppato da RistoControl.",
       "aggregateRating": {
@@ -48,7 +49,8 @@
         :root { 
             --primary: #FF9800; 
             --dark: #121212; 
-            --light: #f4f4f4; 
+            --light: #f4f4f4;
+            --gold: #D4AF37;
         }
         
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -111,24 +113,40 @@
         .badge-red { background: #fed7d7; color: #9b1c1c; }
         .badge-green { background: #c6f6d5; color: #22543d; border: 1px dashed #38a169; }
 
-        /* PREZZI & CONTAINER */
-        .container { padding: 60px 5%; max-width: 1200px; margin: 0 auto; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
-        .card { background: white; padding: 40px 30px; border-radius: 30px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.3s; border-bottom: 5px solid #eee; display: flex; flex-direction: column; }
+        /* PREZZI & CONTAINER - 4 COLONNE */
+        .container { padding: 60px 5%; max-width: 1400px; margin: 0 auto; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+        .card { background: white; padding: 40px 20px; border-radius: 30px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.3s; border-bottom: 5px solid #eee; display: flex; flex-direction: column; }
         .card:hover { transform: translateY(-10px); border-color: var(--primary); }
-        .card img { width: 100%; height: 200px; object-fit: cover; border-radius: 15px; margin-bottom: 20px; filter: grayscale(100%); transition: 0.5s; display: block; }
+        .card img { width: 100%; height: 180px; object-fit: cover; border-radius: 15px; margin-bottom: 20px; filter: grayscale(100%); transition: 0.5s; display: block; }
         .card:hover img { filter: grayscale(0%); }
-        .card h3 { font-size: 1.6rem; font-weight: 800; margin-bottom: 10px; }
-        .price { font-size: 3.5rem; font-weight: 900; color: var(--primary); margin: 15px 0; }
+        .card h3 { font-size: 1.4rem; font-weight: 800; margin-bottom: 10px; }
+        .price { font-size: 3rem; font-weight: 900; color: var(--primary); margin: 15px 0; }
         .features { list-style: none; margin: 25px 0; text-align: left; flex-grow: 1; }
-        .features li { margin-bottom: 12px; padding-left: 30px; position: relative; font-size: 0.95rem; }
+        .features li { margin-bottom: 12px; padding-left: 25px; position: relative; font-size: 0.90rem; line-height: 1.4; }
         .features li::before { content: "✓"; position: absolute; left: 0; color: #4CAF50; font-weight: bold; }
 
-        .btn { display: inline-block; padding: 18px 40px; background: var(--primary); color: white; text-decoration: none; border-radius: 50px; font-weight: 700; text-transform: uppercase; transition: 0.3s; border: none; cursor: pointer; text-align: center; width: 100%; font-size: 1rem; }
+        /* CARD ELITE LIFETIME */
+        .card-elite { background: #161616; color: white; border: 3px solid var(--gold); border-bottom: 5px solid var(--gold); }
+        .card-elite h3 { color: var(--gold); }
+        .card-elite .price { color: var(--gold); }
+        .card-elite .features li::before { color: var(--gold); }
+        .card-elite p { color: #aaa; font-size: 0.85rem; margin-top: -10px; margin-bottom: 15px; }
+
+        /* QUADRATINO ASSISTENZA VIP H24 */
+        .vip-support-box { background: var(--dark); color: white; border: 2px dashed var(--primary); border-radius: 20px; padding: 25px; margin-top: 40px; display: flex; align-items: center; justify-content: space-between; gap: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .vip-info { text-align: left; }
+        .vip-info h5 { font-size: 1.2rem; font-weight: 900; color: var(--primary); text-transform: uppercase; }
+        .vip-info p { font-size: 0.85rem; color: #ccc; margin-top: 4px; }
+        .vip-price { font-size: 1.8rem; font-weight: 900; color: white; white-space: nowrap; }
+
+        .btn { display: inline-block; padding: 18px 30px; background: var(--primary); color: white; text-decoration: none; border-radius: 50px; font-weight: 700; text-transform: uppercase; transition: 0.3s; border: none; cursor: pointer; text-align: center; width: 100%; font-size: 0.9rem; }
         .btn:hover { background: #e68900; transform: scale(1.02); }
+        .btn-gold { background: var(--gold); color: #121212; }
+        .btn-gold:hover { background: #f1c40f; }
 
         /* ALL IN OFFER */
-        .all-in { background: var(--dark); color: white; border-radius: 40px; padding: 80px 40px; margin-top: 100px; text-align: center; border: 2px solid var(--primary); }
+        .all-in { background: var(--dark); color: white; border-radius: 40px; padding: 80px 40px; margin-top: 80px; text-align: center; border: 2px solid var(--primary); }
         .all-in h2 { color: var(--primary); font-size: 2.8rem; font-weight: 900; margin-bottom: 10px; }
         .all-in img { width: 100%; max-width: 900px; height: 400px; object-fit: cover; border-radius: 20px; margin-bottom: 30px; filter: grayscale(100%); transition: 0.5s; display: block; margin: 0 auto; }
         .all-in:hover img { filter: grayscale(0%); }
@@ -175,6 +193,9 @@
             transform: scale(1.03);
         }
         
+        @media (max-width: 992px) {
+            .grid { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+        }
         @media (max-width: 768px) { 
             .hero h1 { font-size: 2.5rem; } 
             .swiper-slide { width: 230px; height: 480px; } 
@@ -184,6 +205,8 @@
             .social-icon svg { height: 20px; width: 20px; }
             .work-with-us-btn { font-size: 0.85rem; padding: 12px 25px; }
             .features-section h2 { font-size: 1.8rem; }
+            .vip-support-box { flex-direction: column; text-align: center; }
+            .vip-info { text-align: center; }
         }
     </style>
 </head>
@@ -362,6 +385,7 @@
             <ul class="features"><li>1 Sala dedicata</li><li>Fino a 15 Tavoli</li><li>Comande Illimitate</li><li>Assistenza Standard</li></ul>
             <a href="https://buy.stripe.com/7sYeVfezF5SQ6EL1mY2Ry00" class="btn">Attiva Ora</a>
         </div>
+        
         <div class="card" style="border: 3px solid var(--primary);">
             <img src="https://images.pexels.com/photos/1566837/pexels-photo-1566837.jpeg?auto=compress&w=600" alt="Pizzeria Comande Comitive">
             <div style="background:var(--primary); color:white; font-size:0.6rem; font-weight:900; padding:4px 12px; border-radius:10px; display:inline-block; margin-bottom:10px;">CONSIGLIATO</div>
@@ -370,12 +394,40 @@
             <ul class="features"><li>1 Sala dedicata</li><li>Fino a 49 Tavoli con mappa visiva</li><li>Monitor Cucina & Pizzeria Live</li><li>Supporto Telefonico Diretto</li></ul>
             <a href="https://buy.stripe.com/aFa14p639che7IPc1C2Ry01" class="btn">Attiva Ora</a>
         </div>
+        
         <div class="card">
             <img src="https://images.pexels.com/photos/1414235/pexels-photo-1414235.jpeg?auto=compress&w=600" alt="Gestione Magazzino Dispensa Ristorante">
             <h3>PIANO PRO</h3>
             <div class="price">€ 129<small style="font-size:1rem; color:#999;">/mese</small></div>
             <ul class="features"><li>3 Sale / 155 Tavoli</li><li>Assistenza VIP Prioritaria</li><li>Gestione Magazzino & Spesa</li><li>Tutte le funzioni attive</li></ul>
             <a href="https://buy.stripe.com/eVq4gB2QX6WUbZ52r22Ry02" class="btn">Attiva Ora</a>
+        </div>
+
+        <div class="card card-elite">
+            <img src="https://images.pexels.com/photos/941861/pexels-photo-941861.jpeg?auto=compress&w=600" alt="Ristorante Elite senza canone">
+            <div style="background:var(--gold); color:#121212; font-size:0.6rem; font-weight:900; padding:4px 12px; border-radius:10px; display:inline-block; margin-bottom:10px;">PROMO COMPLETA</div>
+            <h3>PIANO ELITE VITA</h3>
+            <div class="price">€ 4.500</div>
+            <p>UNA VOLTA SOLA. MAI PIÙ CANONI.</p>
+            <ul class="features">
+                <li><b>Piano PRO Attivo per Sempre</b> senza scadenze</li>
+                <li><b>Sale e Tavoli Illimitati</b> senza limiti</li>
+                <li><b>Hardware Incluso:</b> 2 Tablet, 2 Palmari, 4 Stampanti</li>
+                <li>Configurazione Rete e Sale in 24 Ore</li>
+                <li>Caricamento Menù iniziale</li>
+                <li>Assistenza Tecnica Standard inclusa</li>
+            </ul>
+            <button onclick="openContactModal()" class="btn btn-gold">Richiedi Info</button>
+        </div>
+    </div>
+
+    <div class="vip-support-box">
+        <div class="vip-info">
+            <h5>🛡️ Upgrade: Assistenza Tecnica VIP H24</h5>
+            <p>Il paracadute ideale per i tuoi weekend. Canale telefonico diretto di emergenza attivo venerdì, sabato e domenica sera. Intervento bloccante prioritario in 15 minuti.</p>
+        </div>
+        <div class="vip-price">
+            € 69<small style="font-size:0.9rem; opacity:0.7;">/mese</small>
         </div>
     </div>
 
@@ -390,7 +442,7 @@
             <p>🔧 <b>CUSTOM:</b> Carichiamo noi il tuo menù e disegniamo le tue sale.</p>
             <div class="gift-tag">🎁 REGALO EXTRA: Gestione delle prenotazioni tramite SITO WEB inclusa all'acquisto!</div>
         </div>
-        <button onclick="openContactModal()" class="btn" style="background:white; color:black; width: auto; padding: 25px 80px; font-size: 1.1rem;">RICHIEDI SOPRALLUOGO GRATUITO</button>
+        <button onclick="openContactModal()" class="btn" style="background:white; color:black; width: auto; padding: 25px 80px; font-size: 1.1rem;">Richiedi Info</button>
     </div>
 </div>
 
