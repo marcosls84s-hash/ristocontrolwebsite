@@ -113,7 +113,7 @@
         .badge-red { background: #fed7d7; color: #9b1c1c; }
         .badge-green { background: #c6f6d5; color: #22543d; border: 1px dashed #38a169; }
 
-        /* PREZZI & CONTAINER - 4 COLONNE */
+        /* PREZZI & CONTAINER */
         .container { padding: 60px 5%; max-width: 1400px; margin: 0 auto; }
         .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
         .card { background: white; padding: 40px 20px; border-radius: 30px; text-align: center; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: 0.3s; border-bottom: 5px solid #eee; display: flex; flex-direction: column; }
@@ -133,6 +133,15 @@
         .card-elite .features li::before { color: var(--gold); }
         .card-elite p { color: #aaa; font-size: 0.85rem; margin-top: -10px; margin-bottom: 15px; }
 
+        /* ALL IN OFFER (CHIAVI IN MANO) */
+        .all-in { background: var(--dark); color: white; border-radius: 40px; padding: 80px 40px; text-align: center; border: 2px solid var(--primary); margin-bottom: 40px; }
+        .all-in h2 { color: var(--primary); font-size: 2.8rem; font-weight: 900; margin-bottom: 10px; }
+        .all-in img { width: 100%; max-width: 900px; height: 400px; object-fit: cover; border-radius: 20px; margin-bottom: 30px; filter: grayscale(100%); transition: 0.5s; display: block; margin: 0 auto; }
+        .all-in:hover img { filter: grayscale(0%); }
+        .all-in-details { max-width: 800px; margin: 40px auto; text-align: left; background: rgba(255,255,255,0.05); padding: 40px; border-radius: 25px; border-left: 5px solid var(--primary); }
+        .all-in-details p { margin-bottom: 15px; font-size: 1.1rem; color: #eee; }
+        .gift-tag { background: #fffaf0; color: #ff9800; font-weight: bold; padding: 15px; border-radius: 12px; border: 1px dashed #ff9800; margin-top: 20px; font-size: 1rem; text-transform: uppercase; text-align: center; }
+
         /* QUADRATINO ASSISTENZA VIP H24 */
         .vip-support-box { background: var(--dark); color: white; border: 2px dashed var(--primary); border-radius: 20px; padding: 25px; margin-top: 40px; display: flex; align-items: center; justify-content: space-between; gap: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
         .vip-info { text-align: left; }
@@ -144,15 +153,6 @@
         .btn:hover { background: #e68900; transform: scale(1.02); }
         .btn-gold { background: var(--gold); color: #121212; }
         .btn-gold:hover { background: #f1c40f; }
-
-        /* ALL IN OFFER */
-        .all-in { background: var(--dark); color: white; border-radius: 40px; padding: 80px 40px; margin-top: 80px; text-align: center; border: 2px solid var(--primary); }
-        .all-in h2 { color: var(--primary); font-size: 2.8rem; font-weight: 900; margin-bottom: 10px; }
-        .all-in img { width: 100%; max-width: 900px; height: 400px; object-fit: cover; border-radius: 20px; margin-bottom: 30px; filter: grayscale(100%); transition: 0.5s; display: block; margin: 0 auto; }
-        .all-in:hover img { filter: grayscale(0%); }
-        .all-in-details { max-width: 800px; margin: 40px auto; text-align: left; background: rgba(255,255,255,0.05); padding: 40px; border-radius: 25px; border-left: 5px solid var(--primary); }
-        .all-in-details p { margin-bottom: 15px; font-size: 1.1rem; color: #eee; }
-        .gift-tag { background: #fffaf0; color: #ff9800; font-weight: bold; padding: 15px; border-radius: 12px; border: 1px dashed #ff9800; margin-top: 20px; font-size: 1rem; text-transform: uppercase; text-align: center; }
 
         /* MODALE POP-UP CONTATTI */
         .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 10000; justify-content: center; align-items: center; padding: 20px; }
@@ -366,7 +366,7 @@
         <div class="feature-box">
             <span class="icon">🚀</span>
             <h4>9. Import Menù Lampo & Scarti</h4>
-            <p>Inserimento menù in soli 3 secondi incollando un semplice testo. Include il registro degli scarti (rotture bottiglie, scadenze) per tracciare le perdite invisibili della dispensa.</p>
+            <p>Inserimento menù in soli 3 secondi incollando un simple testo. Include il registro degli scarti (rotture bottiglie, scadenze) per tracciare le perdite invisibili della dispensa.</p>
         </div>
         <div class="feature-box">
             <span class="icon">🍽️</span>
@@ -377,7 +377,7 @@
 </section>
 
 <div class="container">
-    <div class="grid" id="piani">
+    <div class="grid" id="piani-standard" style="margin-bottom: 60px;">
         <div class="card">
             <img src="https://images.pexels.com/photos/262978/pexels-photo-262978.jpeg?auto=compress&w=600" alt="Sala Gestione Mappa Tavoli">
             <h3>PIANO ENTRY</h3>
@@ -402,33 +402,6 @@
             <ul class="features"><li>3 Sale / 155 Tavoli</li><li>Assistenza VIP Prioritaria</li><li>Gestione Magazzino & Spesa</li><li>Tutte le funzioni attive</li></ul>
             <a href="https://buy.stripe.com/eVq4gB2QX6WUbZ52r22Ry02" class="btn">Attiva Ora</a>
         </div>
-
-        <div class="card card-elite">
-            <img src="https://images.pexels.com/photos/941861/pexels-photo-941861.jpeg?auto=compress&w=600" alt="Ristorante Elite senza canone">
-            <div style="background:var(--gold); color:#121212; font-size:0.6rem; font-weight:900; padding:4px 12px; border-radius:10px; display:inline-block; margin-bottom:10px;">PROMO COMPLETA</div>
-            <h3>PIANO ELITE VITA</h3>
-            <div class="price">€ 4.500</div>
-            <p>UNA VOLTA SOLA. MAI PIÙ CANONI.</p>
-            <ul class="features">
-                <li><b>Piano PRO Attivo per Sempre</b> senza scadenze</li>
-                <li><b>Sale e Tavoli Illimitati</b> senza limiti</li>
-                <li><b>Hardware Incluso:</b> 2 Tablet, 2 Palmari, 4 Stampanti</li>
-                <li>Configurazione Rete e Sale in 24 Ore</li>
-                <li>Caricamento Menù iniziale</li>
-                <li>Assistenza Tecnica Standard inclusa</li>
-            </ul>
-            <button onclick="openContactModal()" class="btn btn-gold">Richiedi Info</button>
-        </div>
-    </div>
-
-    <div class="vip-support-box">
-        <div class="vip-info">
-            <h5>🛡️ Upgrade: Assistenza Tecnica VIP H24</h5>
-            <p>Il paracadute ideale per i tuoi weekend. Canale telefonico diretto di emergenza attivo venerdì, sabato e domenica sera. Intervento bloccante prioritario in 15 minuti.</p>
-        </div>
-        <div class="vip-price">
-            € 69<small style="font-size:0.9rem; opacity:0.7;">/mese</small>
-        </div>
     </div>
 
     <div class="all-in">
@@ -443,6 +416,33 @@
             <div class="gift-tag">🎁 REGALO EXTRA: Gestione delle prenotazioni tramite SITO WEB inclusa all'acquisto!</div>
         </div>
         <button onclick="openContactModal()" class="btn" style="background:white; color:black; width: auto; padding: 25px 80px; font-size: 1.1rem;">Richiedi Info</button>
+    </div>
+
+    <div class="card card-elite" style="margin-bottom: 40px; padding: 50px 30px;">
+        <img src="https://images.pexels.com/photos/941861/pexels-photo-941861.jpeg?auto=compress&w=600" alt="Ristorante Elite senza canone" style="max-width: 600px; margin: 0 auto 25px auto; height: 250px;">
+        <div style="background:var(--gold); color:#121212; font-size:0.7rem; font-weight:900; padding:6px 16px; border-radius:10px; display:inline-block; margin-bottom:15px; width: max-content; margin-left: auto; margin-right: auto;">PROMO COMPLETA</div>
+        <h3>PIANO ELITE VITA</h3>
+        <div class="price">€ 4.500</div>
+        <p style="letter-spacing: 1px; font-weight: bold;">UNA VOLTA SOLA. MAI PIÙ CANONI.</p>
+        <ul class="features" style="max-width: 600px; margin: 25px auto;">
+            <li><b>Piano PRO Attivo per Sempre</b> senza scadenze</li>
+            <li><b>Sale e Tavoli Illimitati</b> senza limiti</li>
+            <li><b>Hardware Incluso:</b> 2 Tablet, 2 Palmari, 4 Stampanti</li>
+            <li>Configurazione Rete e Sale in 24 Ore</li>
+            <li>Caricamento Menù iniziale</li>
+            <li>Assistenza Tecnica Standard inclusa</li>
+        </ul>
+        <button onclick="openContactModal()" class="btn btn-gold" style="max-width: 400px; margin: 0 auto; display: block;">Richiedi Info</button>
+    </div>
+
+    <div class="vip-support-box">
+        <div class="vip-info">
+            <h5>🛡️ Upgrade: Assistenza Tecnica VIP H24</h5>
+            <p>Il paracadute ideale per i tuoi weekend. Canale telefonico diretto di emergenza attivo venerdì, sabato e domenica sera. Intervento bloccante prioritario in 15 minuti.</p>
+        </div>
+        <div class="vip-price">
+            € 69<small style="font-size:0.9rem; opacity:0.7;">/mese</small>
+        </div>
     </div>
 </div>
 
@@ -481,7 +481,6 @@
         }
     }
 
-    // FUNZIONE DI INVIO SFONDO ASINCRONO CON ENDPOINT MARCO REINDIRIZZATO
     function sendLeadEmail(event) {
         event.preventDefault();
         
