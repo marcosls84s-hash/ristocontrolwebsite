@@ -142,6 +142,15 @@
         .all-in-details p { margin-bottom: 15px; font-size: 1.1rem; color: #eee; }
         .gift-tag { background: #fffaf0; color: #ff9800; font-weight: bold; padding: 15px; border-radius: 12px; border: 1px dashed #ff9800; margin-top: 20px; font-size: 1rem; text-transform: uppercase; text-align: center; }
 
+        /* GOOGLE DATA SAFETY SECTION */
+        .google-safety-section { background: #ffffff; padding: 40px 30px; border-radius: 25px; border: 1px solid #e0e0e0; margin: 50px 0; text-align: left; box-shadow: 0 4px 12px rgba(0,0,0,0.02); }
+        .google-safety-section h4 { font-size: 1.3rem; font-weight: 800; color: #1a73e8; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
+        .google-safety-section p { font-size: 0.9rem; color: #5f6368; line-height: 1.6; margin-bottom: 10px; }
+        .safety-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 15px; margin-top: 20px; }
+        .safety-item { background: #f8f9fa; padding: 15px; border-radius: 12px; border-left: 4px solid #1a73e8; }
+        .safety-item h5 { font-size: 0.95rem; font-weight: 700; color: var(--dark); margin-bottom: 5px; }
+        .safety-item p { font-size: 0.8rem; margin-bottom: 0; }
+
         /* QUADRATINO ASSISTENZA VIP H24 */
         .vip-support-box { background: var(--dark); color: white; border: 2px dashed var(--primary); border-radius: 20px; padding: 25px; margin-top: 40px; display: flex; align-items: center; justify-content: space-between; gap: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
         .vip-info { text-align: left; }
@@ -366,7 +375,7 @@
         <div class="feature-box">
             <span class="icon">🚀</span>
             <h4>9. Import Menù Lampo & Scarti</h4>
-            <p>Inserimento menù in soli 3 secondi incollando un simple testo. Include il registro degli scarti (rotture bottiglie, scadenze) per tracciare le perdite invisibili della dispensa.</p>
+            <p>Inserimento menù in soli 3 secondi incollando un semplice testo. Include il registro degli scarti (rotture bottiglie, scadenze) per tracciare le perdite invisibili della dispensa.</p>
         </div>
         <div class="feature-box">
             <span class="icon">🍽️</span>
@@ -407,7 +416,7 @@
     <div class="all-in">
         <img src="https://images.unsplash.com/photo-1577106263724-2c8e03bfe9cf?w=1200" alt="Brigata Cucina Pizzeria">
         <h2>SOLUZIONE CHIAVI IN MANO</h2>
-        <div class="price" style="color:white; font-size: 4.5rem; margin: 30px 0;">€ 2.500</div>
+        <div class="price" style="color:white; font-size: 4.5rem; margin: 30px 0;">€ 2.500 <span style="font-size: 1.5rem; color: #ff9800; display: block; margin-top: -10px;">+ IVA</span></div>
         <div class="all-in-details">
             <p>🚀 <b>SETUP COMPLETO:</b> Configurazione software e rete in 24 ore.</p>
             <p>📦 <b>HARDWARE PRO:</b> 2 Tablet, 2 Palmari, 4 Stampanti Termiche.</p>
@@ -422,7 +431,7 @@
         <img src="https://images.pexels.com/photos/941861/pexels-photo-941861.jpeg?auto=compress&w=600" alt="Ristorante Elite senza canone" style="max-width: 600px; margin: 0 auto 25px auto; height: 250px;">
         <div style="background:var(--gold); color:#121212; font-size:0.7rem; font-weight:900; padding:6px 16px; border-radius:10px; display:inline-block; margin-bottom:15px; width: max-content; margin-left: auto; margin-right: auto;">PROMO COMPLETA</div>
         <h3>PIANO ELITE VITA</h3>
-        <div class="price">€ 4.500</div>
+        <div class="price">€ 4.500 <span style="font-size: 1.5rem; color: var(--gold); display: block; margin-top: -10px;">+ IVA</span></div>
         <p style="letter-spacing: 1px; font-weight: bold;">UNA VOLTA SOLA. MAI PIÙ CANONI.</p>
         <ul class="features" style="max-width: 600px; margin: 25px auto;">
             <li><b>Piano PRO Attivo per Sempre</b> senza scadenze</li>
@@ -433,6 +442,25 @@
             <li>Assistenza Tecnica Standard inclusa</li>
         </ul>
         <button onclick="openContactModal()" class="btn btn-gold" style="max-width: 400px; margin: 0 auto; display: block;">Richiedi Info</button>
+    </div>
+
+    <div class="google-safety-section">
+        <h4>🔒 Trasparenza & Sicurezza dei Dati (Google Play Compliant)</h4>
+        <p>La nostra applicazione <b>Soluzione Ristorante Pro</b> (distribuita da RistoControl) rispetta rigorosamente i requisiti e le direttive del Google Play Store in materia di riservatezza, protezione dei dati personali e crittografia.</p>
+        <div class="safety-grid">
+            <div class="safety-item">
+                <h5>Crittografia Avanzata</h5>
+                <p>Tutti i dati scambiati tra i monitor cucina, i palmari di sala e i server cloud vengono cifrati tramite protocollo HTTPS/TLS a 256 bit.</p>
+            </div>
+            <div class="safety-item">
+                <h5>Nessuna Cessione a Terzi</h5>
+                <p>I dati di fatturazione (Fatture in Cloud, Aruba, Doc Easy) e i dettagli del menu non vengono mai venduti o condivisi con entità pubblicitarie esterne.</p>
+            </div>
+            <div class="safety-item">
+                <h5>Controllo degli Account</h5>
+                <p>Ogni ristoratore e operatore dello staff può richiedere l'eliminazione definitiva del proprio profilo e dei propri log contabili in qualsiasi momento.</p>
+            </div>
+        </div>
     </div>
 
     <div class="vip-support-box">
