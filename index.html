@@ -142,7 +142,7 @@
         .all-in-details p { margin-bottom: 15px; font-size: 1.1rem; color: #eee; }
         .gift-tag { background: #fffaf0; color: #ff9800; font-weight: bold; padding: 15px; border-radius: 12px; border: 1px dashed #ff9800; margin-top: 20px; font-size: 1rem; text-transform: uppercase; text-align: center; }
 
-        /* GOOGLE DATA SAFETY SECTION */
+        /* GOOGLE DATA SAFETY & PRIVACY BOX */
         .google-safety-section { background: #ffffff; padding: 40px 30px; border-radius: 25px; border: 1px solid #e0e0e0; margin: 50px 0; text-align: left; box-shadow: 0 4px 12px rgba(0,0,0,0.02); }
         .google-safety-section h4 { font-size: 1.3rem; font-weight: 800; color: #1a73e8; margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
         .google-safety-section p { font-size: 0.9rem; color: #5f6368; line-height: 1.6; margin-bottom: 10px; }
@@ -150,6 +150,45 @@
         .safety-item { background: #f8f9fa; padding: 15px; border-radius: 12px; border-left: 4px solid #1a73e8; }
         .safety-item h5 { font-size: 0.95rem; font-weight: 700; color: var(--dark); margin-bottom: 5px; }
         .safety-item p { font-size: 0.8rem; margin-bottom: 0; }
+
+        /* QUADRATINO PRIVACY POLICY PER GOOGLE PLAY */
+        .privacy-box {
+            background: #f0f7ff;
+            border: 2px dashed #1a73e8;
+            border-radius: 20px;
+            padding: 30px;
+            margin: 40px 0;
+            text-align: center;
+        }
+        .privacy-box h4 {
+            color: #1a73e8;
+            font-size: 1.3rem;
+            font-weight: 900;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+        .privacy-box p {
+            font-size: 0.9rem;
+            color: #444;
+            max-width: 800px;
+            margin: 0 auto 20px auto;
+            line-height: 1.5;
+        }
+        .privacy-btn {
+            background: #1a73e8;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            transition: 0.3s;
+        }
+        .privacy-btn:hover {
+            background: #1557b0;
+        }
 
         /* QUADRATINO ASSISTENZA VIP H24 */
         .vip-support-box { background: var(--dark); color: white; border: 2px dashed var(--primary); border-radius: 20px; padding: 25px; margin-top: 40px; display: flex; align-items: center; justify-content: space-between; gap: 20px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
@@ -163,9 +202,9 @@
         .btn-gold { background: var(--gold); color: #121212; }
         .btn-gold:hover { background: #f1c40f; }
 
-        /* MODALE POP-UP CONTATTI */
+        /* MODALE POP-UP CONTATTI E PRIVACY */
         .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 10000; justify-content: center; align-items: center; padding: 20px; }
-        .modal-content { background: white; padding: 30px; border-radius: 30px; max-width: 500px; width: 100%; border: 3px solid var(--primary); position: relative; text-align: center; }
+        .modal-content { background: white; padding: 30px; border-radius: 30px; max-width: 600px; width: 100%; border: 3px solid var(--primary); position: relative; text-align: center; max-height: 85vh; overflow-y: auto; }
         .close-modal { position: absolute; top: 15px; right: 20px; font-size: 1.8rem; cursor: pointer; color: var(--dark); font-weight: bold; }
         .modal h4 { font-size: 1.5rem; margin-bottom: 20px; font-weight: 900; text-transform: uppercase; }
         .contact-methods { display: flex; flex-direction: column; gap: 15px; margin-bottom: 25px; }
@@ -282,6 +321,34 @@
             
             <button type="submit" id="submitBtn" class="btn">Invia Richiesta</button>
         </form>
+    </div>
+</div>
+
+<div id="privacyModal" class="modal">
+    <div class="modal-content" style="text-align: left; border-color: #1a73e8;">
+        <span class="close-modal" onclick="closePrivacyModal()">&times;</span>
+        <h4 style="color: #1a73e8; font-size: 1.3rem;">Informativa sulla Privacy Policy</h4>
+        <p style="font-size: 0.8rem; color: #666; margin-bottom: 15px;"><b>Soluzione Ristorante Pro</b> by RistoControl | Ultimo aggiornamento: 2026</p>
+        
+        <div style="font-size: 0.85rem; color: #333; line-height: 1.5;">
+            <p><b>1. Titolare del Trattamento</b><br>
+            RistoControl Professional (Email: ristocontrolprofessional@gmail.com, Tel: +39 333 694 1713) sviluppa e gestisce l'applicazione "Soluzione Ristorante Pro".</p><br>
+            
+            <p><b>2. Tipologia di Dati Raccolti</b><br>
+            L'applicazione raccoglie esclusivamente i dati necessari al funzionamento del gestionale di cassa, sala e cucina:
+            - Dati identificativi della struttura (nome locale, configurazione mappe sale e tavoli).<br>
+            - Dati del menu, comande, ordini e storico vendite per il calcolo del borsellino e del Food Cost.<br>
+            - Eventuali credenziali di accesso inserite dall'amministratore per i collaboratori dello staff.</p><br>
+
+            <p><b>3. Finalità del Trattamento & Cifratura</b><br>
+            I dati vengono elaborati al solo scopo di sincronizzare in tempo reale i monitor cucina, i tablet di sala e i palmari dello staff. Tutte le comunicazioni di rete sono cifrate mediante protocollo sicuro HTTPS/TLS a 256 bit.</p><br>
+
+            <p><b>4. Nessuna Cessione a Terze Parti</b><br>
+            RistoControl non vende, non condivide e non concede in licenza i dati contabili o personali degli utenti a società pubblicitarie o a terzi.</p><br>
+
+            <p><b>5. Diritti dell'Utente e Cancellazione dell'Account</b><br>
+            Ogni utente/ristoratore può richiedere in qualsiasi momento la modifica o la cancellazione definitiva dei propri dati e del proprio profilo inviando una richiesta via mail a <i>ristocontrolprofessional@gmail.com</i>.</p>
+        </div>
     </div>
 </div>
 
@@ -454,13 +521,19 @@
             </div>
             <div class="safety-item">
                 <h5>Nessuna Cessione a Terzi</h5>
-                <p>I dati di fatturazione (Fatture in Cloud, Aruba, Doc Easy) e i dettagli del menu non vengono mai venduti o condivisi con entità pubblicitarie esterne.</p>
+                <p>I dati di fatturazione e i dettagli del menu non vengono mai venduti o condivisi con entità pubblicitarie esterne.</p>
             </div>
             <div class="safety-item">
                 <h5>Controllo degli Account</h5>
-                <p>Ogni ristoratore e operatore dello staff può richiedere l'eliminazione definitiva del proprio profilo e dei propri log contabili in qualsiasi momento.</p>
+                <p>Ogni ristoratore e operatore dello staff può richiedere l'eliminazione definitiva del proprio profilo in qualsiasi momento.</p>
             </div>
         </div>
+    </div>
+
+    <div class="privacy-box">
+        <h4>📄 Informativa sulla Privacy Policy dell'App</h4>
+        <p>In conformità con le direttive di Google Play Store e il Regolamento GDPR (UE 2016/679), puoi consultare l'informativa completa sul trattamento dei dati personali dell'applicazione <b>Soluzione Ristorante Pro</b>.</p>
+        <button onclick="openPrivacyModal()" class="privacy-btn">Leggi la Privacy Policy Ufficiale</button>
     </div>
 
     <div class="vip-support-box">
@@ -502,11 +575,20 @@
     function closeContactModal() {
         document.getElementById("contactModal").style.display = "none";
     }
+
+    /* FUNZIONI PER LA PRIVACY MODAL */
+    function openPrivacyModal() {
+        document.getElementById("privacyModal").style.display = "flex";
+    }
+    function closePrivacyModal() {
+        document.getElementById("privacyModal").style.display = "none";
+    }
+
     window.onclick = function(event) {
-        var modal = document.getElementById("contactModal");
-        if (event.target == modal) {
-            modal.style.display = "none";
-        }
+        var cModal = document.getElementById("contactModal");
+        var pModal = document.getElementById("privacyModal");
+        if (event.target == cModal) cModal.style.display = "none";
+        if (event.target == pModal) pModal.style.display = "none";
     }
 
     function sendLeadEmail(event) {
